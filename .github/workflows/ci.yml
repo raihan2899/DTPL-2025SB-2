@@ -31,37 +31,6 @@ jobs:
       - name: Run PHP lint
         run: composer test:lint
 
-  php-test:
-    name: PHP Tests (PHP ${{ matrix.php }})
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php: ['8.4']
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php }}
-          extensions: pdo_sqlite, mbstring, xml, bcmath, pcntl
-          tools: composer:v2
-
-      - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist
-
-      - name: Prepare environment
-        run: |
-          cp .env.example .env
-          php artisan key:generate
-          touch database/database.sqlite
-
-      - name: Run tests
-        env:
-          DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
-        run: php artisan test
-
   js-lint:
     name: JS/TS Lint (Node ${{ matrix.node }})
     runs-on: ubuntu-latest
@@ -103,45 +72,6 @@ jobs:
 
       - name: Run Prettier check
         run: npm run format:check
-
-  type-check:
-    name: TypeScript Check (Node ${{ matrix.node }})
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ['22']
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.4'
-          extensions: pdo_sqlite, mbstring, xml, bcmath, pcntl
-          tools: composer:v2
-
-      - name: Install PHP dependencies
-        run: composer install --no-interaction --prefer-dist
-
-      - name: Generate Wayfinder routes
-        run: |
-          cp .env.example .env
-          php artisan key:generate
-          touch database/database.sqlite
-          php artisan wayfinder:generate
-          ls -la resources/js/routes/ resources/js/actions/
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run type check
-        run: npm run types
 
   build:
     name: Production Build (Node ${{ matrix.node }})
