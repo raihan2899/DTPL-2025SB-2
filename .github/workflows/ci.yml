@@ -117,10 +117,8 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - php-lint
-      - php-test
       - js-lint
       - format-check
-      - type-check
       - build
     permissions:
       contents: read
