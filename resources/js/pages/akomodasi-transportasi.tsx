@@ -1,84 +1,7 @@
-import { Head } from '@inertiajs/react';
-import {
-    BedDouble,
-    Bus,
-    Car,
-    Clock,
-    Home,
-    MapPin,
-    Mountain,
-    Phone,
-    Star,
-    Train,
-} from 'lucide-react';
+import { Head, Link } from '@inertiajs/react';
+import { ArrowLeft, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
-
-const accommodations = [
-    {
-        name: 'Homestay Manud Jaya',
-        type: 'Homestay',
-        description:
-            'Penginapan rumahan yang nyaman dengan suasana khas pedesaan. Dikelola langsung oleh warga desa dengan pelayanan ramah.',
-        price: 'Rp 250.000 / malam',
-        rating: 4.8,
-        amenities: ['Wi-Fi', 'Sarapan', 'Air Panas', 'Parkir'],
-        icon: Home,
-        gradient: 'from-emerald-400 to-cyan-500',
-    },
-    {
-        name: 'Villa Puncak Embun',
-        type: 'Villa',
-        description:
-            'Villa dengan pemandangan pegunungan yang menakjubkan. Cocok untuk keluarga atau rombongan kecil yang menginginkan privasi.',
-        price: 'Rp 500.000 / malam',
-        rating: 4.9,
-        amenities: ['Wi-Fi', 'Dapur', 'Taman', 'Parkir', 'BBQ Area'],
-        icon: Mountain,
-        gradient: 'from-blue-400 to-indigo-500',
-    },
-    {
-        name: 'Penginapan Cahaya',
-        type: 'Losmen',
-        description:
-            'Penginapan sederhana namun bersih dan nyaman. Lokasi strategis dekat dengan berbagai destinasi wisata desa.',
-        price: 'Rp 150.000 / malam',
-        rating: 4.5,
-        amenities: ['Parkir', 'Kamar Mandi Dalam', 'Air Panas'],
-        icon: BedDouble,
-        gradient: 'from-amber-400 to-orange-500',
-    },
-];
-
-const transportOptions = [
-    {
-        name: 'Dari Kota via Bus',
-        icon: Bus,
-        duration: '± 3 jam',
-        description:
-            'Bus umum tersedia dari Terminal Kota menuju Terminal Desa Manud Jaya setiap hari. Berangkat pukul 06.00, 10.00, dan 14.00 WIB.',
-        price: 'Rp 35.000 / orang',
-        route: 'Terminal Kota → Terminal Desa Manud Jaya',
-    },
-    {
-        name: 'Dari Kota via Kereta + Angkot',
-        icon: Train,
-        duration: '± 2.5 jam',
-        description:
-            'Naik kereta api ke Stasiun Terdekat, lalu lanjutkan perjalanan dengan angkutan pedesaan menuju Desa Manud Jaya.',
-        price: 'Rp 50.000 / orang (kereta + angkot)',
-        route: 'Stasiun Kota → Stasiun Terdekat → Desa Manud Jaya',
-    },
-    {
-        name: 'Kendaraan Pribadi / Rental',
-        icon: Car,
-        duration: '± 2 jam',
-        description:
-            'Akses jalan menuju desa sudah beraspal dengan baik. Tersedia area parkir luas di pusat desa. Rental mobil tersedia di kota.',
-        price: 'Rental mulai Rp 300.000 / hari',
-        route: 'Jalan Raya Kota → Jl. Pegunungan → Desa Manud Jaya',
-    },
-];
 
 export default function AkomodasiTransportasi({
     canRegister = true,
@@ -110,157 +33,153 @@ export default function AkomodasiTransportasi({
                                 </span>
                             </h1>
                             <p className="mt-4 text-lg text-muted-foreground">
-                                Informasi lengkap tentang penginapan dan cara
-                                menuju Desa Manud Jaya dari kota.
+                                Panduan lengkap penginapan dan perjalanan menuju
+                                Desa Manud Jaya.
                             </p>
                         </div>
                     </div>
                 </section>
 
-                <main>
-                    {/* Akomodasi */}
-                    <section className="mx-auto max-w-7xl px-6 py-16">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                                Penginapan
-                            </h2>
-                            <p className="mt-4 text-lg text-muted-foreground">
-                                Berbagai pilihan akomodasi nyaman untuk menemani
-                                liburan Anda di Desa Manud Jaya.
-                            </p>
-                        </div>
-                        <div className="mt-12 grid gap-8 md:grid-cols-3">
-                            {accommodations.map((acc) => (
-                                <div
-                                    key={acc.name}
-                                    className="overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg"
-                                >
-                                    <div
-                                        className={`flex h-40 items-center justify-center bg-gradient-to-br ${acc.gradient}`}
-                                    >
-                                        <acc.icon className="h-14 w-14 text-white/80" />
-                                    </div>
-                                    <div className="p-5">
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <h3 className="font-semibold text-card-foreground">
-                                                    {acc.name}
-                                                </h3>
-                                                <span className="text-xs text-muted-foreground">
-                                                    {acc.type}
-                                                </span>
-                                            </div>
-                                            <div className="flex items-center gap-1">
-                                                <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                                                <span className="text-sm font-medium">
-                                                    {acc.rating}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                                            {acc.description}
-                                        </p>
-                                        <p className="mt-3 text-sm font-semibold text-primary">
-                                            {acc.price}
-                                        </p>
-                                        <div className="mt-3 flex flex-wrap gap-2">
-                                            {acc.amenities.map((amenity) => (
-                                                <span
-                                                    key={amenity}
-                                                    className="rounded-full border border-border bg-muted px-2.5 py-0.5 text-xs text-muted-foreground"
-                                                >
-                                                    {amenity}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
+                {/* Article */}
+                <article className="mx-auto max-w-3xl px-6 py-16">
+                    <div className="prose prose-lg dark:prose-invert max-w-none">
+                        {/* Penginapan */}
+                        <h2 className="text-2xl font-bold">Penginapan</h2>
+                        <p className="mt-4 leading-relaxed text-muted-foreground">
+                            Desa Manud Jaya menyediakan berbagai pilihan
+                            akomodasi yang cocok untuk semua kalangan wisatawan.
+                            Mulai dari homestay sederhana hingga villa dengan
+                            fasilitas lengkap, semua dikelola langsung oleh
+                            warga desa dengan keramahan khas pedesaan.
+                        </p>
 
-                    {/* Transportasi */}
-                    <section className="border-y border-border bg-muted/50">
-                        <div className="mx-auto max-w-7xl px-6 py-16">
-                            <div className="mx-auto max-w-2xl text-center">
-                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                                    Transportasi
-                                </h2>
-                                <p className="mt-4 text-lg text-muted-foreground">
-                                    Cara menuju Desa Manud Jaya dari kota
-                                    terdekat.
-                                </p>
-                            </div>
-                            <div className="mt-12 space-y-6">
-                                {transportOptions.map((opt) => (
-                                    <div
-                                        key={opt.name}
-                                        className="rounded-xl border border-border bg-card p-6"
-                                    >
-                                        <div className="flex flex-col gap-6 md:flex-row md:items-start">
-                                            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                                                <opt.icon className="h-7 w-7 text-primary" />
-                                            </div>
-                                            <div className="flex-1">
-                                                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                                                    <h3 className="text-lg font-semibold">
-                                                        {opt.name}
-                                                    </h3>
-                                                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                                                        <Clock className="h-4 w-4" />
-                                                        {opt.duration}
-                                                    </div>
-                                                </div>
-                                                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                                                    {opt.description}
-                                                </p>
-                                                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
-                                                    <div className="flex items-center gap-2 text-sm">
-                                                        <MapPin className="h-4 w-4 text-primary" />
-                                                        <span className="text-muted-foreground">
-                                                            {opt.route}
-                                                        </span>
-                                                    </div>
-                                                    <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                                                        <Phone className="h-4 w-4" />
-                                                        {opt.price}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
+                        <h3 className="mt-10 text-xl font-semibold">
+                            Homestay Warga
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-muted-foreground">
+                            Bagi yang ingin merasakan kehidupan desa secara
+                            langsung, homestay warga adalah pilihan terbaik.
+                            Tersedia beberapa rumah warga yang telah disiapkan
+                            untuk menerima tamu dengan kamar bersih, air panas,
+                            dan sarapan tradisional. Harga mulai dari{' '}
+                            <strong>Rp 150.000</strong> hingga{' '}
+                            <strong>Rp 250.000 per malam</strong>, sudah
+                            termasuk sarapan. Fasilitas umum yang tersedia
+                            meliputi Wi-Fi, parkir, dan kamar mandi dalam.
+                        </p>
 
-                    {/* Tips */}
-                    <section className="mx-auto max-w-7xl px-6 py-16">
-                        <div className="rounded-2xl border border-border bg-card p-8">
-                            <h3 className="text-xl font-bold">
-                                Tips Perjalanan
-                            </h3>
-                            <ul className="mt-4 space-y-3">
-                                {[
-                                    'Sebaiknya pesan penginapan minimal 3 hari sebelum kedatangan, terutama saat musim liburan.',
-                                    'Jika menggunakan kendaraan pribadi, pastikan kendaraan dalam kondisi baik karena medan menanjak.',
-                                    'Bawa jaket hangat karena suhu di desa bisa turun hingga 12°C di malam hari.',
-                                    'Hubungi penginapan untuk penjemputan di terminal atau stasiun terdekat.',
-                                ].map((tip) => (
-                                    <li
-                                        key={tip}
-                                        className="flex items-start gap-3"
-                                    >
-                                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                                        <span className="text-sm text-muted-foreground">
-                                            {tip}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </section>
-                </main>
+                        <h3 className="mt-10 text-xl font-semibold">
+                            Villa & Penginapan Keluarga
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-muted-foreground">
+                            Untuk keluarga atau rombongan yang menginginkan
+                            privasi lebih, tersedia beberapa villa dengan
+                            pemandangan pegunungan. Villa dilengkapi dapur,
+                            taman, area BBQ, dan ruang keluarga. Harga berkisar
+                            antara{' '}
+                            <strong>Rp 400.000 — Rp 600.000 per malam</strong>{' '}
+                            tergantung ukuran dan fasilitas. Sebaiknya pesan
+                            minimal 3 hari sebelum kedatangan, terutama pada
+                            musim liburan.
+                        </p>
+
+                        {/* Transportasi */}
+                        <h2 className="mt-16 text-2xl font-bold">
+                            Transportasi Menuju Desa
+                        </h2>
+                        <p className="mt-4 leading-relaxed text-muted-foreground">
+                            Desa Manud Jaya dapat dijangkau dari kota terdekat
+                            melalui beberapa moda transportasi. Jarak tempuh
+                            dari pusat kota sekitar 60 km dengan waktu
+                            perjalanan 2—3 jam tergantung jalur yang dipilih.
+                        </p>
+
+                        <h3 className="mt-10 text-xl font-semibold">
+                            Bus Umum
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-muted-foreground">
+                            Bus umum tersedia dari Terminal Kota menuju Terminal
+                            Desa Manud Jaya setiap hari dengan jadwal
+                            keberangkatan pukul 06.00, 10.00, dan 14.00 WIB.
+                            Perjalanan memakan waktu sekitar 3 jam dengan biaya{' '}
+                            <strong>Rp 35.000 per orang</strong>. Bus akan
+                            melewati jalur pegunungan dengan pemandangan alam
+                            yang indah sepanjang perjalanan.
+                        </p>
+
+                        <h3 className="mt-10 text-xl font-semibold">
+                            Kereta Api + Angkutan Pedesaan
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-muted-foreground">
+                            Alternatif lain adalah naik kereta api dari Stasiun
+                            Kota menuju Stasiun Terdekat, kemudian melanjutkan
+                            perjalanan dengan angkutan pedesaan (angkot) menuju
+                            Desa Manud Jaya. Total waktu perjalanan sekitar 2,5
+                            jam dengan biaya{' '}
+                            <strong>
+                                Rp 50.000 per orang (kereta + angkot)
+                            </strong>
+                            . Angkot dari stasiun beroperasi mulai pukul 06.00
+                            hingga 18.00 WIB.
+                        </p>
+
+                        <h3 className="mt-10 text-xl font-semibold">
+                            Kendaraan Pribadi / Rental
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-muted-foreground">
+                            Akses jalan menuju desa sudah beraspal dengan baik.
+                            Dari pusat kota, ambil Jalan Raya Pegunungan ke arah
+                            selatan, lalu ikuti papan petunjuk menuju Desa Manud
+                            Jaya. Perjalanan memakan waktu sekitar 2 jam.
+                            Tersedia area parkir luas di pusat desa. Bagi yang
+                            tidak membawa kendaraan, rental mobil tersedia di
+                            kota dengan harga mulai{' '}
+                            <strong>Rp 300.000 per hari</strong>. Pastikan
+                            kendaraan dalam kondisi baik karena sebagian jalan
+                            berupa tanjakan.
+                        </p>
+
+                        {/* Tips */}
+                        <h2 className="mt-16 text-2xl font-bold">
+                            Tips Perjalanan
+                        </h2>
+                        <ul className="mt-4 space-y-2 text-muted-foreground">
+                            <li>
+                                Sebaiknya pesan penginapan minimal 3 hari
+                                sebelum kedatangan, terutama saat musim liburan.
+                            </li>
+                            <li>
+                                Bawa jaket hangat karena suhu di desa bisa turun
+                                hingga 12°C di malam hari.
+                            </li>
+                            <li>
+                                Hubungi penginapan untuk layanan penjemputan di
+                                terminal atau stasiun terdekat.
+                            </li>
+                            <li>
+                                Jika menggunakan kendaraan pribadi, isi bensin
+                                penuh sebelum memasuki kawasan pegunungan karena
+                                SPBU terbatas.
+                            </li>
+                            <li>
+                                Waktu terbaik berkunjung adalah bulan April
+                                hingga September (musim kemarau) untuk cuaca
+                                yang cerah dan jalur pendakian yang aman.
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                {/* Back link */}
+                <section className="mx-auto max-w-3xl px-6 pb-16">
+                    <Link
+                        href="/"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        Kembali ke Beranda
+                    </Link>
+                </section>
 
                 {/* Footer */}
                 <footer className="border-t border-border">

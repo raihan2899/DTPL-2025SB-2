@@ -1,14 +1,5 @@
 import { Head, Link, usePage } from '@inertiajs/react';
-import {
-    Cherry,
-    Droplets,
-    MapPin,
-    Mountain,
-    Quote,
-    Star,
-    Tent,
-    TreePalm,
-} from 'lucide-react';
+import { Bus, Cherry, Droplets, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 import { dashboard, register } from '@/routes';
@@ -18,7 +9,6 @@ const destinations = [
         name: 'Puncak Manud',
         description:
             'Panoramic mountain viewpoint offering breathtaking sunrise vistas over the village and surrounding valleys.',
-        rating: 4.9,
         gradient: 'from-emerald-400 to-cyan-500',
         icon: Mountain,
         href: '/wisata/puncak-manud',
@@ -27,7 +17,6 @@ const destinations = [
         name: 'Kebun Stroberi Manud Jaya',
         description:
             'Lush strawberry fields where visitors can pick their own fresh berries amidst the cool highland air.',
-        rating: 4.8,
         gradient: 'from-pink-400 to-rose-500',
         icon: Cherry,
         href: '/wisata/kebun-stroberi',
@@ -36,52 +25,9 @@ const destinations = [
         name: 'Air Terjun Cahaya',
         description:
             'A stunning 40-meter waterfall hidden in the tropical forest, perfect for swimming and nature photography.',
-        rating: 4.9,
         gradient: 'from-blue-400 to-indigo-500',
         icon: Droplets,
         href: '/wisata/air-terjun-cahaya',
-    },
-    {
-        name: 'Bukit Embun',
-        description:
-            'A misty hilltop trail surrounded by pine trees, ideal for morning hikes and camping under the stars.',
-        rating: 4.7,
-        gradient: 'from-teal-400 to-emerald-600',
-        icon: Tent,
-    },
-    {
-        name: 'Taman Bunga Desa',
-        description:
-            'A colorful flower garden cultivated by local villagers, showcasing native highland blooms year-round.',
-        rating: 4.6,
-        gradient: 'from-orange-400 to-amber-500',
-        icon: TreePalm,
-    },
-    {
-        name: 'Sungai Jernih',
-        description:
-            'Crystal-clear river flowing through the village, popular for tubing, fishing, and riverside picnics.',
-        rating: 4.8,
-        gradient: 'from-sky-400 to-blue-600',
-        icon: Droplets,
-    },
-];
-
-const testimonials = [
-    {
-        quote: 'Desa Manud Jaya adalah permata tersembunyi. Pemandangan gunungnya luar biasa dan kebun stroberinya membuat anak-anak kami sangat senang!',
-        name: 'Rina Hartono',
-        location: 'Jakarta, Indonesia',
-    },
-    {
-        quote: 'Air Terjun Cahaya benar-benar memukau. Airnya sejuk dan bersih, dikelilingi hutan yang masih asri. Pasti akan kembali lagi.',
-        name: 'Budi Prasetyo',
-        location: 'Bandung, Indonesia',
-    },
-    {
-        quote: 'Penduduk desanya sangat ramah dan pemandu lokalnya luar biasa. Sunrise dari Puncak Manud adalah pengalaman yang tak terlupakan.',
-        name: 'Dewi Lestari',
-        location: 'Surabaya, Indonesia',
     },
 ];
 
@@ -130,12 +76,12 @@ export default function Welcome({
                                     >
                                         Jelajahi Wisata
                                     </a>
-                                    <a
-                                        href="#testimonials"
+                                    <Link
+                                        href="/akomodasi-transportasi"
                                         className="rounded-lg border border-border px-6 py-3 text-sm font-semibold transition-colors hover:bg-accent"
                                     >
-                                        Baca Testimoni
-                                    </a>
+                                        Akomodasi & Transportasi
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -156,8 +102,8 @@ export default function Welcome({
                             </p>
                         </div>
                         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                            {destinations.map((dest) => {
-                                const card = (
+                            {destinations.map((dest) => (
+                                <Link key={dest.name} href={dest.href}>
                                     <div className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
                                         <div
                                             className={`flex h-48 items-center justify-center bg-gradient-to-br ${dest.gradient}`}
@@ -169,81 +115,55 @@ export default function Welcome({
                                                 <h3 className="font-semibold text-card-foreground">
                                                     {dest.name}
                                                 </h3>
-                                                <div className="flex items-center gap-1">
-                                                    <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                                                    <span className="text-sm font-medium">
-                                                        {dest.rating}
-                                                    </span>
-                                                </div>
                                             </div>
                                             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                                                 {dest.description}
                                             </p>
                                         </div>
                                     </div>
-                                );
-
-                                return dest.href ? (
-                                    <Link key={dest.name} href={dest.href}>
-                                        {card}
-                                    </Link>
-                                ) : (
-                                    <div key={dest.name}>{card}</div>
-                                );
-                            })}
+                                </Link>
+                            ))}
                         </div>
                     </section>
 
-                    {/* Testimoni */}
-                    <section
-                        id="testimonials"
-                        className="border-y border-border bg-muted/50"
-                    >
+                    {/* Akomodasi & Transportasi Thumbnail */}
+                    <section className="border-y border-border bg-muted/50">
                         <div className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-                            <div className="mx-auto max-w-2xl text-center">
-                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                                    Kata Pengunjung
-                                </h2>
-                                <p className="mt-4 text-lg text-muted-foreground">
-                                    Cerita nyata dari para wisatawan yang telah
-                                    menjelajahi Desa Manud Jaya.
-                                </p>
-                            </div>
-                            <div className="mt-12 grid gap-8 md:grid-cols-3">
-                                {testimonials.map((t) => (
-                                    <div
-                                        key={t.name}
-                                        className="rounded-xl border border-border bg-card p-6"
+                            <div className="grid items-center gap-12 lg:grid-cols-2">
+                                <div>
+                                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                                        Akomodasi & Transportasi
+                                    </h2>
+                                    <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                                        Temukan berbagai pilihan penginapan
+                                        nyaman mulai dari homestay warga hingga
+                                        villa keluarga. Desa Manud Jaya mudah
+                                        dijangkau melalui bus umum, kereta api,
+                                        maupun kendaraan pribadi dari kota
+                                        terdekat.
+                                    </p>
+                                    <Link
+                                        href="/akomodasi-transportasi"
+                                        className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                                     >
-                                        <Quote className="mb-4 h-8 w-8 text-muted-foreground/40" />
-                                        <p className="text-sm leading-relaxed text-card-foreground">
-                                            {t.quote}
-                                        </p>
-                                        <div className="mt-6 flex items-center gap-3">
-                                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
-                                                {t.name.charAt(0)}
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-medium">
-                                                    {t.name}
-                                                </p>
-                                                <p className="flex items-center gap-1 text-xs text-muted-foreground">
-                                                    <MapPin className="h-3 w-3" />
-                                                    {t.location}
-                                                </p>
-                                            </div>
-                                        </div>
+                                        <Bus className="h-4 w-4" />
+                                        Selengkapnya
+                                    </Link>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="flex aspect-square items-center justify-center rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500">
+                                        <Bus className="h-12 w-12 text-white/80" />
                                     </div>
-                                ))}
+                                    <div className="flex aspect-square items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500">
+                                        <Mountain className="h-12 w-12 text-white/80" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
 
                     {/* CTA */}
-                    <section
-                        id="contact"
-                        className="mx-auto max-w-7xl px-6 py-20 lg:py-28"
-                    >
+                    <section className="mx-auto max-w-7xl px-6 py-20 lg:py-28">
                         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-500 to-emerald-500 px-6 py-16 text-center sm:px-16">
                             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                 Siap Menjelajahi Desa Manud Jaya?
@@ -298,12 +218,6 @@ export default function Welcome({
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                 >
                                     Wisata
-                                </a>
-                                <a
-                                    href="#testimonials"
-                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                                >
-                                    Testimoni
                                 </a>
                                 <Link
                                     href="/akomodasi-transportasi"
