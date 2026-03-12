@@ -5,7 +5,9 @@ import {
     Cherry,
     Clock,
     HandCoins,
+    Info,
     Leaf,
+    UtensilsCrossed,
 } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
@@ -60,40 +62,78 @@ export default function KebunStroberi({
                                 Tentang Kebun Stroberi
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Kebun Stroberi Manud Jaya terletak di dataran
-                                tinggi yang sejuk, menyediakan pengalaman unik
-                                bagi pengunjung untuk memetik stroberi segar
-                                langsung dari kebunnya. Kebun ini dikelola
-                                secara organik oleh petani lokal, menghasilkan
-                                buah stroberi yang manis dan berkualitas tinggi.
+                                Kebun Strawberry Manud Jaya merupakan destinasi wisata
+                                keluarga yang menawarkan pengalaman memetik strawberry
+                                langsung dari kebunnya. Terletak di kawasan pegunungan
+                                dengan udara yang sejuk, kebun ini menjadi tempat yang
+                                menyenangkan bagi pengunjung untuk menikmati suasana
+                                alam sekaligus merasakan pengalaman memetik buah segar
+                                secara langsung.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Selain memetik stroberi, pengunjung juga dapat
-                                menikmati berbagai olahan stroberi segar seperti
-                                jus, selai, dan kue stroberi khas desa. Area
-                                kebun yang luas juga menjadi spot foto favorit
-                                dengan latar belakang pegunungan yang menawan.
+                                Destinasi ini juga dirancang sebagai wisata ramah anak
+                                (kids-friendly). Anak-anak dapat mengikuti aktivitas
+                                edukatif seperti memberi makan kelinci dan domba yang
+                                berada di area peternakan mini. Kegiatan ini
+                                wmemberikan pengalaman belajar yang menyenangkan bagi
+                                anak-anak mengenai hewan dan lingkungan.
                             </p>
-
+                            <p className="mt-4 leading-relaxed text-muted-foreground">
+                                Destinasi ini juga dirancang sebagai wisata ramah anak
+                                (kids-friendly). Anak-anak dapat mengikuti aktivitas
+                                edukatif seperti memberi makan kelinci dan domba yang
+                                berada di area peternakan mini. Kegiatan ini
+                                wmemberikan pengalaman belajar yang menyenangkan bagi
+                                anak-anak mengenai hewan dan lingkungan.
+                            </p>
                             <h3 className="mt-10 text-xl font-semibold">
-                                Aktivitas
+                                Aktivitas yang Bisa Dilakukan
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {[
                                     {
                                         icon: Cherry,
-                                        title: 'Petik Stroberi',
+                                        title: 'Mmetik stroberi langsung dari kebun',
                                         desc: 'Petik langsung stroberi segar dari kebun dan bawa pulang sebagai oleh-oleh.',
                                     },
                                     {
                                         icon: Leaf,
-                                        title: 'Tasting',
-                                        desc: 'Cicipi berbagai olahan stroberi organik khas Desa Manud Jaya.',
+                                        title: 'Memberi Makan Hewan',
+                                        desc: 'Beri makan kelinci dan domba di peternakan mini yang ada di area wisata.',
                                     },
                                     {
                                         icon: Camera,
-                                        title: 'Spot Foto',
-                                        desc: 'Abadikan momen di tengah kebun stroberi dengan latar pegunungan.',
+                                        title: 'Berfoto di area kebun strawberry',
+                                        desc: 'Abadikan momen seru memetik stroberi dengan latar kebun yang indah.',
+                                    },
+                                ].map((activity) => (
+                                    <div
+                                        key={activity.title}
+                                        className="rounded-xl border border-border bg-card p-5"
+                                    >
+                                        <activity.icon className="h-8 w-8 text-pink-500" />
+                                        <h4 className="mt-3 font-semibold">
+                                            {activity.title}
+                                        </h4>
+                                        <p className="mt-1 text-sm text-muted-foreground">
+                                            {activity.desc}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+
+
+                            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                                {[
+                                    {
+                                        icon: UtensilsCrossed,
+                                        title: 'Menikmati olahan strawberry segar ',
+                                        desc: 'Cicipi berbagai olahan stroberi organik khas Desa Manud Jaya.',
+                                    },
+                                    {
+                                        icon: Info,
+                                        title: 'Wisata edukasi pertanian untuk anak-anak ',
+                                        desc: 'Anak-anak dapat belajar tentang pertanian dan cara menanam stroberi melalui aktivitas edukatif yang menyenangkan.',
                                     },
                                 ].map((activity) => (
                                     <div
@@ -153,8 +193,13 @@ export default function KebunStroberi({
                                                 Harga Tiket
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                Rp 25.000 / orang (termasuk 100g
-                                                stroberi)
+                                                <ul className="mt-1 text-xs text-muted-foreground">
+                                                    <li> Tiket masuk kebun : Rp15.000 / orang </li>
+                                                    <li> Paket petik strawberry : Rp50.000 / 500 gram </li>
+                                                    <li> Pakan kelinci & domba : Rp10.000 / paket </li>
+                                                    <li> Parkir motor : Rp5.000 </li>
+                                                    <li> Parkir mobil : Rp10.000 </li>
+                                                </ul>
                                             </dd>
                                         </div>
                                     </div>

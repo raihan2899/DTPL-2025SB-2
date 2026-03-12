@@ -22,7 +22,7 @@ const destinations = [
         href: '/wisata/kebun-stroberi',
     },
     {
-        name: 'Air Terjun Cahaya',
+        name: 'Air Terjun Manud Jaya',
         description:
             'A stunning 40-meter waterfall hidden in the tropical forest, perfect for swimming and nature photography.',
         gradient: 'from-blue-400 to-indigo-500',

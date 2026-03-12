@@ -17,7 +17,7 @@ export default function AirTerjunCahaya({
 }) {
     return (
         <>
-            <Head title="Air Terjun Cahaya — Desa Manud Jaya">
+            <Head title="Air Terjun Manud Jaya — Desa Manud Jaya">
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link
                     href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700"
@@ -40,7 +40,7 @@ export default function AirTerjunCahaya({
                                 <Droplets className="h-10 w-10 text-white" />
                             </div>
                             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                                Air Terjun Cahaya
+                                Air Terjun Manud Jaya
                             </h1>
                             <p className="mt-4 text-lg text-muted-foreground">
                                 A stunning 40-meter waterfall hidden in the
@@ -57,24 +57,26 @@ export default function AirTerjunCahaya({
                         {/* Main content */}
                         <div className="lg:col-span-2">
                             <h2 className="text-2xl font-bold">
-                                Tentang Air Terjun Cahaya
+                                Tentang Air Terjun Manud Jaya
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Air Terjun Cahaya adalah permata tersembunyi di
-                                jantung hutan tropis Desa Manud Jaya. Dengan
-                                ketinggian sekitar 40 meter, air terjun ini
-                                menciptakan kolam alami yang jernih di dasarnya,
-                                sempurna untuk berenang dan menyegarkan diri
-                                setelah perjalanan menyusuri hutan.
+                                Air Terjun Manud Jaya merupakan salah satu keindahan
+                                alam yang menjadi daya tarik utama desa ini. Terletak
+                                di kawasan hutan yang masih alami, air terjun ini
+                                menawarkan suasana yang sejuk, tenang, dan menyegarkan
+                                bagi para pengunjung.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Nama &quot;Cahaya&quot; berasal dari fenomena
-                                unik di mana sinar matahari menembus celah
-                                kanopi hutan dan memantulkan pelangi kecil di
-                                percikan air terjun, terutama pada pagi hari
-                                antara pukul 09:00 — 11:00. Jalur menuju air
-                                terjun sepanjang 1,5 km melewati hutan yang
-                                rimbun dengan suara alam yang menenangkan.
+                                Untuk mencapai lokasi air terjun, pengunjung perlu
+                                melakukan trekking ringan selama sekitar 15–20 menit
+                                dari area parkir. Sepanjang perjalanan, wisatawan
+                                akan melewati jalur alami dengan pemandangan pepohonan
+                                hijau dan suara alam yang menenangkan.
+                            </p>
+                            <p className="mt-4 leading-relaxed text-muted-foreground">
+                                Sesampainya di lokasi, pengunjung dapat menikmati air
+                                terjun dengan air yang jernih serta suasana alam yang
+                                masih sangat asri.
                             </p>
 
                             <h3 className="mt-10 text-xl font-semibold">
@@ -82,11 +84,11 @@ export default function AirTerjunCahaya({
                             </h3>
                             <ul className="mt-4 space-y-3">
                                 {[
-                                    'Kolam alami yang jernih untuk berenang',
-                                    'Fenomena pelangi di percikan air terjun pada pagi hari',
-                                    'Jalur trekking melalui hutan tropis yang rimbun',
-                                    'Spot foto dengan latar belakang air terjun yang megah',
-                                    'Suasana tenang jauh dari keramaian kota',
+                                    'Trekking ringan menuju air terjun',
+                                    'Menikmati panorama alam sekitar',
+                                    'Bermain air di area air terjun',
+                                    'Berfoto di spot alam yang indah',
+                                    'Bersantai menikmati udara pegunungan'
                                 ].map((item) => (
                                     <li
                                         key={item}
@@ -179,6 +181,25 @@ export default function AirTerjunCahaya({
                                             <dd className="text-sm text-muted-foreground">
                                                 Ya — kolam alami dengan
                                                 kedalaman 1,5-3 meter
+                                            </dd>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Waves className="mt-0.5 h-5 w-5 text-blue-500" />
+                                        <div>
+                                            <dt className="text-sm font-medium">
+                                                Harga Tiket Masuk
+                                            </dt>
+                                            <dd className="text-sm text-muted-foreground">
+                                                <ul className="list-inside list-disc">
+                                                    <li>Tiket masuk : Rp10.000 / orang</li>
+                                                    <li>Tiket trekking area : Rp5.000</li>
+                                                    <li>Parkir motor : Rp5.000</li>
+                                                    <li>Parkir mobil : Rp10.000</li>
+                                                    <li>Sewa tracking pole : Rp 15.000 / hari</li>
+                                                    <li>Guide : Rp 150.000 / hari</li>
+                                                    <li>Ban / Pelanpung : Rp 10.000</li>
+                                                </ul>
                                             </dd>
                                         </div>
                                     </div>

@@ -67,10 +67,7 @@ export default function Kontak({
                                                 Email
                                             </h3>
                                             <p className="mt-1 text-sm text-muted-foreground">
-                                                info@desamanudjaya.id
-                                            </p>
-                                            <p className="text-sm text-muted-foreground">
-                                                wisata@desamanudjaya.id
+                                                humasManudJaya@gmail.com
                                             </p>
                                         </div>
                                     </div>
@@ -85,58 +82,14 @@ export default function Kontak({
                                                 Telepon
                                             </h3>
                                             <p className="mt-1 text-sm text-muted-foreground">
-                                                +62 812-3456-7890 (Kantor Desa)
+                                                +62 812 – 1122 3344 (Bapak Efendi)
                                             </p>
                                             <p className="text-sm text-muted-foreground">
-                                                +62 857-9876-5432 (WhatsApp
-                                                Wisata)
+                                                +62 812 – 1011 1213 (Bapak Efendi)
                                             </p>
                                         </div>
                                     </div>
 
-                                    {/* Address */}
-                                    <div className="flex items-start gap-4">
-                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                                            <MapPin className="h-6 w-6 text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-semibold">
-                                                Alamat
-                                            </h3>
-                                            <p className="mt-1 text-sm text-muted-foreground">
-                                                Desa Manud Jaya, Kecamatan
-                                                Pegunungan
-                                            </p>
-                                            <p className="text-sm text-muted-foreground">
-                                                Kabupaten Lembah Hijau, Provinsi
-                                                Nusantara
-                                            </p>
-                                            <p className="text-sm text-muted-foreground">
-                                                Kode Pos: 12345
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Operating Hours */}
-                                    <div className="flex items-start gap-4">
-                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                                            <Clock className="h-6 w-6 text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-semibold">
-                                                Jam Operasional
-                                            </h3>
-                                            <p className="mt-1 text-sm text-muted-foreground">
-                                                Senin — Jumat: 08.00 — 17.00 WIB
-                                            </p>
-                                            <p className="text-sm text-muted-foreground">
-                                                Sabtu: 08.00 — 12.00 WIB
-                                            </p>
-                                            <p className="text-sm text-muted-foreground">
-                                                Minggu & Hari Libur: Tutup
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 

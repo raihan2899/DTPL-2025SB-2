@@ -29,7 +29,7 @@ const wisataDestinations = [
     },
     {
         href: '/wisata/air-terjun-cahaya',
-        label: 'Air Terjun Cahaya',
+        label: 'Air Terjun Manud Jaya',
         description: 'Air terjun 40 meter',
         icon: Droplets,
     },
