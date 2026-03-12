@@ -24,7 +24,8 @@ export default function WisataNavbar({
     const defaultLinks: NavLink[] = [
         { href: '#destinations', label: 'Wisata' },
         { href: '#testimonials', label: 'Testimoni' },
-        { href: '#contact', label: 'Kontak' },
+        { href: '/akomodasi-transportasi', label: 'Akomodasi & Transportasi' },
+        { href: '/kontak', label: 'Kontak Kami' },
     ];
 
     const links = navLinks ?? defaultLinks;
@@ -42,15 +43,25 @@ export default function WisataNavbar({
 
                 {/* Desktop nav */}
                 <div className="hidden items-center gap-8 md:flex">
-                    {links.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                        >
-                            {link.label}
-                        </a>
-                    ))}
+                    {links.map((link) =>
+                        link.href.startsWith('#') ? (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                            >
+                                {link.label}
+                            </a>
+                        ) : (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                            >
+                                {link.label}
+                            </Link>
+                        ),
+                    )}
                     <div className="flex items-center gap-3">
                         {auth.user ? (
                             <Link
@@ -99,16 +110,27 @@ export default function WisataNavbar({
             {mobileMenuOpen && (
                 <div className="border-t border-border px-6 py-4 md:hidden">
                     <div className="flex flex-col gap-4">
-                        {links.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="text-sm font-medium text-muted-foreground"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        {links.map((link) =>
+                            link.href.startsWith('#') ? (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm font-medium text-muted-foreground"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm font-medium text-muted-foreground"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                            ),
+                        )}
                         <div className="flex items-center gap-3 border-t border-border pt-4">
                             {auth.user ? (
                                 <Link

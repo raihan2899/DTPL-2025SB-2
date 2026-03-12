@@ -292,7 +292,7 @@ export default function Welcome({
                                 <Mountain className="h-5 w-5 text-primary" />
                                 <span>Desa Manud Jaya</span>
                             </div>
-                            <div className="flex gap-6">
+                            <div className="flex flex-wrap gap-6">
                                 <a
                                     href="#destinations"
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -305,12 +305,18 @@ export default function Welcome({
                                 >
                                     Testimoni
                                 </a>
-                                <a
-                                    href="#contact"
+                                <Link
+                                    href="/akomodasi-transportasi"
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                 >
-                                    Kontak
-                                </a>
+                                    Akomodasi & Transportasi
+                                </Link>
+                                <Link
+                                    href="/kontak"
+                                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                                >
+                                    Kontak Kami
+                                </Link>
                             </div>
                             <p className="text-sm text-muted-foreground">
                                 &copy; 2026 Desa Manud Jaya. Hak cipta
