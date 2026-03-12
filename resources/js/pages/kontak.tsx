@@ -82,14 +82,15 @@ export default function Kontak({
                                                 Telepon
                                             </h3>
                                             <p className="mt-1 text-sm text-muted-foreground">
-                                                +62 812 – 1122 3344 (Bapak Efendi)
+                                                +62 812 – 1122 3344 (Bapak
+                                                Efendi)
                                             </p>
                                             <p className="text-sm text-muted-foreground">
-                                                +62 812 – 1011 1213 (Bapak Efendi)
+                                                +62 812 – 1011 1213 (Bapak
+                                                Efendi)
                                             </p>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
 

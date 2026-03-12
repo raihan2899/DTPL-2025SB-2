@@ -62,28 +62,31 @@ export default function KebunStroberi({
                                 Tentang Kebun Stroberi
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Kebun Strawberry Manud Jaya merupakan destinasi wisata
-                                keluarga yang menawarkan pengalaman memetik strawberry
-                                langsung dari kebunnya. Terletak di kawasan pegunungan
-                                dengan udara yang sejuk, kebun ini menjadi tempat yang
-                                menyenangkan bagi pengunjung untuk menikmati suasana
-                                alam sekaligus merasakan pengalaman memetik buah segar
-                                secara langsung.
+                                Kebun Strawberry Manud Jaya merupakan destinasi
+                                wisata keluarga yang menawarkan pengalaman
+                                memetik strawberry langsung dari kebunnya.
+                                Terletak di kawasan pegunungan dengan udara yang
+                                sejuk, kebun ini menjadi tempat yang
+                                menyenangkan bagi pengunjung untuk menikmati
+                                suasana alam sekaligus merasakan pengalaman
+                                memetik buah segar secara langsung.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Destinasi ini juga dirancang sebagai wisata ramah anak
-                                (kids-friendly). Anak-anak dapat mengikuti aktivitas
-                                edukatif seperti memberi makan kelinci dan domba yang
-                                berada di area peternakan mini. Kegiatan ini
-                                wmemberikan pengalaman belajar yang menyenangkan bagi
+                                Destinasi ini juga dirancang sebagai wisata
+                                ramah anak (kids-friendly). Anak-anak dapat
+                                mengikuti aktivitas edukatif seperti memberi
+                                makan kelinci dan domba yang berada di area
+                                peternakan mini. Kegiatan ini wmemberikan
+                                pengalaman belajar yang menyenangkan bagi
                                 anak-anak mengenai hewan dan lingkungan.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Destinasi ini juga dirancang sebagai wisata ramah anak
-                                (kids-friendly). Anak-anak dapat mengikuti aktivitas
-                                edukatif seperti memberi makan kelinci dan domba yang
-                                berada di area peternakan mini. Kegiatan ini
-                                wmemberikan pengalaman belajar yang menyenangkan bagi
+                                Destinasi ini juga dirancang sebagai wisata
+                                ramah anak (kids-friendly). Anak-anak dapat
+                                mengikuti aktivitas edukatif seperti memberi
+                                makan kelinci dan domba yang berada di area
+                                peternakan mini. Kegiatan ini wmemberikan
+                                pengalaman belajar yang menyenangkan bagi
                                 anak-anak mengenai hewan dan lingkungan.
                             </p>
                             <h3 className="mt-10 text-xl font-semibold">
@@ -121,7 +124,6 @@ export default function KebunStroberi({
                                     </div>
                                 ))}
                             </div>
-
 
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {[
@@ -194,11 +196,31 @@ export default function KebunStroberi({
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
                                                 <ul className="mt-1 text-xs text-muted-foreground">
-                                                    <li> Tiket masuk kebun : Rp15.000 / orang </li>
-                                                    <li> Paket petik strawberry : Rp50.000 / 500 gram </li>
-                                                    <li> Pakan kelinci & domba : Rp10.000 / paket </li>
-                                                    <li> Parkir motor : Rp5.000 </li>
-                                                    <li> Parkir mobil : Rp10.000 </li>
+                                                    <li>
+                                                        {' '}
+                                                        Tiket masuk kebun :
+                                                        Rp15.000 / orang{' '}
+                                                    </li>
+                                                    <li>
+                                                        {' '}
+                                                        Paket petik strawberry :
+                                                        Rp50.000 / 500 gram{' '}
+                                                    </li>
+                                                    <li>
+                                                        {' '}
+                                                        Pakan kelinci & domba :
+                                                        Rp10.000 / paket{' '}
+                                                    </li>
+                                                    <li>
+                                                        {' '}
+                                                        Parkir motor :
+                                                        Rp5.000{' '}
+                                                    </li>
+                                                    <li>
+                                                        {' '}
+                                                        Parkir mobil :
+                                                        Rp10.000{' '}
+                                                    </li>
                                                 </ul>
                                             </dd>
                                         </div>

@@ -50,13 +50,14 @@ export default function AkomodasiTransportasi({
                         <p className="mt-4 leading-relaxed text-muted-foreground">
                             Desa Manud Jaya dapat diakses dari stasiun kereta
                             sukabumi dengan menggunakan kendaraan pribadi maupun
-                            transportasi lokal seperti ojek wisata dan mobil travel.
-                            Perjalanan menuju desa menawarkan pemandangan alam
-                            pegunungan yang indah dan udara yang semakin sejuk
-                            ketika mendekati kawasan desa.
+                            transportasi lokal seperti ojek wisata dan mobil
+                            travel. Perjalanan menuju desa menawarkan
+                            pemandangan alam pegunungan yang indah dan udara
+                            yang semakin sejuk ketika mendekati kawasan desa.
                         </p>
                         <p className="mt-4 leading-relaxed text-muted-foreground">
-                            Jarak ke Desa Manud Jaya dari stasiun sukabumi: ±18 km
+                            Jarak ke Desa Manud Jaya dari stasiun sukabumi: ±18
+                            km
                         </p>
 
                         <h3 className="mt-10 text-xl font-semibold">
@@ -77,21 +78,44 @@ export default function AkomodasiTransportasi({
                                     <ul className="mt-2 list-disc pl-5">
                                         <li> PIC: Pak Rudi </li>
                                         <li>Nomor HP: 0812-3456-8890</li>
-                                        <li>Harga:
+                                        <li>
+                                            Harga:
                                             <ul className="mt-2 list-disc pl-5">
-                                                <li>Stasiun – Desa Manud Jaya : Rp35.000 / orang</li>
-                                                <li>Desa – Air Terjun : Rp15.000</li>
-                                                <li>Desa – Basecamp Gunung : Rp20.000</li>
+                                                <li>
+                                                    Stasiun – Desa Manud Jaya :
+                                                    Rp35.000 / orang
+                                                </li>
+                                                <li>
+                                                    Desa – Air Terjun : Rp15.000
+                                                </li>
+                                                <li>
+                                                    Desa – Basecamp Gunung :
+                                                    Rp20.000
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li>Spesifikasi Kendaraan: Motor trail / motor bebek wisata</li>
-                                        <li>Kapasitas : 1 penumpang</li>
-                                        <li>Cocok untuk jalur desa dan jalan pegunungan</li>
                                         <li>
-                                            <ul className="mt-2 list-disc pl-5">Estimasi Perjalanan:
-                                                <li>Stasiun → Desa : 30 menit</li>
-                                                <li>Desa → Air Terjun : 10 menit</li>
-                                                <li>Desa → Basecamp Gunung : 15 menit</li>
+                                            Spesifikasi Kendaraan: Motor trail /
+                                            motor bebek wisata
+                                        </li>
+                                        <li>Kapasitas : 1 penumpang</li>
+                                        <li>
+                                            Cocok untuk jalur desa dan jalan
+                                            pegunungan
+                                        </li>
+                                        <li>
+                                            <ul className="mt-2 list-disc pl-5">
+                                                Estimasi Perjalanan:
+                                                <li>
+                                                    Stasiun → Desa : 30 menit
+                                                </li>
+                                                <li>
+                                                    Desa → Air Terjun : 10 menit
+                                                </li>
+                                                <li>
+                                                    Desa → Basecamp Gunung : 15
+                                                    menit
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -101,32 +125,54 @@ export default function AkomodasiTransportasi({
                                     <ul className="mt-2 list-disc pl-5">
                                         <li>PIC: Ibu Sari</li>
                                         <li>Nomor HP: 0813-9988-2211</li>
-                                        <li>Harga: Stasiun – Desa Manud Jaya : Rp150.000 / mobil</li>
-                                        <li>Spesifikasi Kendaraan: Toyota Avanza / Daihatsu Xenia</li>
+                                        <li>
+                                            Harga: Stasiun – Desa Manud Jaya :
+                                            Rp150.000 / mobil
+                                        </li>
+                                        <li>
+                                            Spesifikasi Kendaraan: Toyota Avanza
+                                            / Daihatsu Xenia
+                                        </li>
                                         <li>Kapasitas : 5 penumpang</li>
-                                        <li>Fasilitas:
+                                        <li>
+                                            Fasilitas:
                                             <ul className="mt-2 list-disc pl-5">
                                                 <li>AC</li>
-                                                <li>Bagasi untuk barang wisatawan</li>
+                                                <li>
+                                                    Bagasi untuk barang
+                                                    wisatawan
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li>Estimasi Perjalanan: Stasiun → Desa : 40 menit</li>
+                                        <li>
+                                            Estimasi Perjalanan: Stasiun → Desa
+                                            : 40 menit
+                                        </li>
                                     </ul>
                                 </li>
 
-                                <li> Sewa Motor Wisata
+                                <li>
+                                    {' '}
+                                    Sewa Motor Wisata
                                     <ul className="mt-2 list-disc pl-5">
                                         <li>PIC: Pak Dani</li>
                                         <li>Nomor HP: 0812-7722-5566</li>
-                                        <li>Harga: Sewa motor : Rp80.000 / hari</li>
+                                        <li>
+                                            Harga: Sewa motor : Rp80.000 / hari
+                                        </li>
                                         <li>Helm : termasuk</li>
-                                        <li>Spesifikasi Kendaraan: Honda Beat / Yamaha Mio</li>
+                                        <li>
+                                            Spesifikasi Kendaraan: Honda Beat /
+                                            Yamaha Mio
+                                        </li>
                                         <li>Kapasitas : 2 orang</li>
                                         <li>Bahan bakar : bensin</li>
-                                        <li>Estimasi Perjalanan: Stasiun → Desa : 35 menit</li>
+                                        <li>
+                                            Estimasi Perjalanan: Stasiun → Desa
+                                            : 35 menit
+                                        </li>
                                     </ul>
                                 </li>
-
                             </ol>
                         </p>
 
@@ -146,15 +192,20 @@ export default function AkomodasiTransportasi({
                             berupa tanjakan.
                         </p>
                         {/* Penginapan */}
-                        <h2 className="text-2xl font-bold">Penginapan di Desa Manud Jaya </h2>
+                        <h2 className="text-2xl font-bold">
+                            Penginapan di Desa Manud Jaya{' '}
+                        </h2>
                         <ol className="mt-3 list-decimal space-y-8 pl-5 text-muted-foreground">
                             <li>
-                                <h4 className="font-semibold text-foreground">Manud Jaya Homestay</h4>
+                                <h4 className="font-semibold text-foreground">
+                                    Manud Jaya Homestay
+                                </h4>
                                 <ul className="mt-2 list-disc pl-5">
                                     <li>PIC: Ibu Lina</li>
                                     <li>Nomor HP: 0813-3344-7788</li>
                                     <li>Harga: Rp150.000 / malam</li>
-                                    <li>Fasilitas:
+                                    <li>
+                                        Fasilitas:
                                         <ul className="mt-2 list-disc pl-5">
                                             <li>1 kamar tidur</li>
                                             <li>Tempat tidur double</li>
@@ -168,14 +219,20 @@ export default function AkomodasiTransportasi({
                                 </ul>
                             </li>
                             <li>
-                                <h4 className="font-semibold text-foreground">Penginapan Bukit Manud</h4>
+                                <h4 className="font-semibold text-foreground">
+                                    Penginapan Bukit Manud
+                                </h4>
                                 <ul className="mt-2 list-disc pl-5">
                                     <li>PIC: Pak Agus</li>
                                     <li>Nomor HP: 0812-2233-4455</li>
                                     <li>Harga: Rp250.000 / malam</li>
-                                    <li>Fasilitas:
+                                    <li>
+                                        Fasilitas:
                                         <ul className="mt-2 list-disc pl-5">
-                                            <li>Kamar dengan pemandangan pegunungan</li>
+                                            <li>
+                                                Kamar dengan pemandangan
+                                                pegunungan
+                                            </li>
                                             <li>Kamar mandi dalam</li>
                                             <li>Air panas</li>
                                             <li>Balkon</li>
@@ -201,7 +258,8 @@ export default function AkomodasiTransportasi({
                             <li>PIC: Pak Arman</li>
                             <li>Nomor HP: 0813-5566-7788</li>
                             <li>Harga Menginap: Rp20.000 / orang / malam</li>
-                            <li>Fasilitas:
+                            <li>
+                                Fasilitas:
                                 <ul className="mt-2 list-disc pl-5">
                                     <li>Area istirahat pendaki</li>
                                     <li>Toilet</li>
@@ -211,14 +269,16 @@ export default function AkomodasiTransportasi({
                                     <li>Informasi jalur pendakian</li>
                                 </ul>
                             </li>
-                            <li>Layanan Tambahan:
+                            <li>
+                                Layanan Tambahan:
                                 <ul className="mt-2 list-disc pl-5">
-                                    <li>Ojek Basecamp → Pos 1 : Rp40.000 / orang</li>
+                                    <li>
+                                        Ojek Basecamp → Pos 1 : Rp40.000 / orang
+                                    </li>
                                     <li>Guide pendakian : Rp150.000 / grup</li>
                                 </ul>
                             </li>
                         </ul>
-
                     </div>
                 </article>
 

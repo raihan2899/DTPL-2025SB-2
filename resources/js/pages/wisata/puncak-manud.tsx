@@ -61,30 +61,34 @@ export default function PuncakManud({
                                 Tentang Puncak Manud
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Puncak Gunung Manud Jaya merupakan destinasi wisata
-                                alam bagi para pecinta petualangan dan pendaki. Gunung
-                                ini memiliki ketinggian sekitar 2.110 mdpl (meter
-                                di atas permukaan laut) dan menawarkan panorama
-                                alam yang luar biasa dari puncaknya.
+                                Puncak Gunung Manud Jaya merupakan destinasi
+                                wisata alam bagi para pecinta petualangan dan
+                                pendaki. Gunung ini memiliki ketinggian sekitar
+                                2.110 mdpl (meter di atas permukaan laut) dan
+                                menawarkan panorama alam yang luar biasa dari
+                                puncaknya.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
                                 Dari puncak gunung, pengunjung dapat menikmati
-                                pemandangan hamparan pegunungan, kebun pertanian, serta
-                                lanskap desa yang terlihat sangat indah terutama saat
-                                matahari terbit (sunrise) maupun matahari terbenam (sunset).
+                                pemandangan hamparan pegunungan, kebun
+                                pertanian, serta lanskap desa yang terlihat
+                                sangat indah terutama saat matahari terbit
+                                (sunrise) maupun matahari terbenam (sunset).
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Pendakian dapat dimulai dari basecamp yang tersedia
-                                di desa. Untuk mempermudah akses, tersedia ojek gunung
-                                yang dapat mengantar pengunjung hingga Pos 1.
-                                Dari Pos 1 menuju puncak, perjalanan trekking
-                                membutuhkan waktu sekitar 4–5 jam dengan elevation
-                                gain sekitar 1.100 mdpl.
+                                Pendakian dapat dimulai dari basecamp yang
+                                tersedia di desa. Untuk mempermudah akses,
+                                tersedia ojek gunung yang dapat mengantar
+                                pengunjung hingga Pos 1. Dari Pos 1 menuju
+                                puncak, perjalanan trekking membutuhkan waktu
+                                sekitar 4–5 jam dengan elevation gain sekitar
+                                1.100 mdpl.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Pendaki dapat memilih untuk melakukan pendakian tektok
-                                (naik dan turun dalam satu hari) atau berkemah (camping)
-                                untuk menikmati suasana malam di pegunungan.
+                                Pendaki dapat memilih untuk melakukan pendakian
+                                tektok (naik dan turun dalam satu hari) atau
+                                berkemah (camping) untuk menikmati suasana malam
+                                di pegunungan.
                             </p>
 
                             <h3 className="mt-10 text-xl font-semibold">
@@ -96,7 +100,7 @@ export default function PuncakManud({
                                     'Menikmati panorama alam dari ketinggian 2.110 mdpl',
                                     'Menikmati sunrise dan sunset dari puncak',
                                     'Camping di area pendakian',
-                                    'Pendakian tektok(naik turun dalam satu hari)'
+                                    'Pendakian tektok(naik turun dalam satu hari)',
                                 ].map((item) => (
                                     <li
                                         key={item}

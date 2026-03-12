@@ -60,23 +60,25 @@ export default function AirTerjunCahaya({
                                 Tentang Air Terjun Manud Jaya
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Air Terjun Manud Jaya merupakan salah satu keindahan
-                                alam yang menjadi daya tarik utama desa ini. Terletak
-                                di kawasan hutan yang masih alami, air terjun ini
-                                menawarkan suasana yang sejuk, tenang, dan menyegarkan
-                                bagi para pengunjung.
+                                Air Terjun Manud Jaya merupakan salah satu
+                                keindahan alam yang menjadi daya tarik utama
+                                desa ini. Terletak di kawasan hutan yang masih
+                                alami, air terjun ini menawarkan suasana yang
+                                sejuk, tenang, dan menyegarkan bagi para
+                                pengunjung.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Untuk mencapai lokasi air terjun, pengunjung perlu
-                                melakukan trekking ringan selama sekitar 15–20 menit
-                                dari area parkir. Sepanjang perjalanan, wisatawan
-                                akan melewati jalur alami dengan pemandangan pepohonan
-                                hijau dan suara alam yang menenangkan.
+                                Untuk mencapai lokasi air terjun, pengunjung
+                                perlu melakukan trekking ringan selama sekitar
+                                15–20 menit dari area parkir. Sepanjang
+                                perjalanan, wisatawan akan melewati jalur alami
+                                dengan pemandangan pepohonan hijau dan suara
+                                alam yang menenangkan.
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Sesampainya di lokasi, pengunjung dapat menikmati air
-                                terjun dengan air yang jernih serta suasana alam yang
-                                masih sangat asri.
+                                Sesampainya di lokasi, pengunjung dapat
+                                menikmati air terjun dengan air yang jernih
+                                serta suasana alam yang masih sangat asri.
                             </p>
 
                             <h3 className="mt-10 text-xl font-semibold">
@@ -88,7 +90,7 @@ export default function AirTerjunCahaya({
                                     'Menikmati panorama alam sekitar',
                                     'Bermain air di area air terjun',
                                     'Berfoto di spot alam yang indah',
-                                    'Bersantai menikmati udara pegunungan'
+                                    'Bersantai menikmati udara pegunungan',
                                 ].map((item) => (
                                     <li
                                         key={item}
@@ -192,13 +194,32 @@ export default function AirTerjunCahaya({
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
                                                 <ul className="list-inside list-disc">
-                                                    <li>Tiket masuk : Rp10.000 / orang</li>
-                                                    <li>Tiket trekking area : Rp5.000</li>
-                                                    <li>Parkir motor : Rp5.000</li>
-                                                    <li>Parkir mobil : Rp10.000</li>
-                                                    <li>Sewa tracking pole : Rp 15.000 / hari</li>
-                                                    <li>Guide : Rp 150.000 / hari</li>
-                                                    <li>Ban / Pelanpung : Rp 10.000</li>
+                                                    <li>
+                                                        Tiket masuk : Rp10.000 /
+                                                        orang
+                                                    </li>
+                                                    <li>
+                                                        Tiket trekking area :
+                                                        Rp5.000
+                                                    </li>
+                                                    <li>
+                                                        Parkir motor : Rp5.000
+                                                    </li>
+                                                    <li>
+                                                        Parkir mobil : Rp10.000
+                                                    </li>
+                                                    <li>
+                                                        Sewa tracking pole : Rp
+                                                        15.000 / hari
+                                                    </li>
+                                                    <li>
+                                                        Guide : Rp 150.000 /
+                                                        hari
+                                                    </li>
+                                                    <li>
+                                                        Ban / Pelanpung : Rp
+                                                        10.000
+                                                    </li>
                                                 </ul>
                                             </dd>
                                         </div>
