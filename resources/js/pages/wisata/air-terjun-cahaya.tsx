@@ -26,10 +26,7 @@ export default function AirTerjunCahaya({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar
-                    canRegister={canRegister}
-                    navLinks={[{ href: '/', label: 'Beranda' }]}
-                />
+                <WisataNavbar canRegister={canRegister} />
 
                 {/* Hero */}
                 <section className="relative">

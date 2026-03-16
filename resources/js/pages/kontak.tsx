@@ -1,5 +1,5 @@
-import { Head } from '@inertiajs/react';
-import { Mail, MapPin, Mountain, Phone } from 'lucide-react';
+import { Head, Link } from '@inertiajs/react';
+import { ArrowLeft, Mail, Mountain, Phone } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 
@@ -105,17 +105,11 @@ export default function Kontak({
                                     Peta lokasi Desa Manud Jaya dan rute menuju
                                     desa wisata.
                                 </p>
-                                <div className="mt-8 flex aspect-[4/3] items-center justify-center rounded-xl border border-border bg-muted">
-                                    <div className="text-center">
-                                        <MapPin className="mx-auto h-12 w-12 text-muted-foreground/40" />
-                                        <p className="mt-4 text-sm font-medium text-muted-foreground">
-                                            Peta Google Maps
-                                        </p>
-                                        <p className="mt-1 text-xs text-muted-foreground/60">
-                                            Embed peta akan ditampilkan di sini
-                                        </p>
-                                    </div>
-                                </div>
+                                <img
+                                    src="/images/kontak_peta.png"
+                                    alt="Peta Lokasi Desa Manud Jaya"
+                                    className="mt-8 aspect-[4/3] w-full rounded-xl object-cover"
+                                />
 
                                 {/* Directions summary */}
                                 <div className="mt-6 rounded-xl border border-border bg-card p-6">
@@ -145,6 +139,17 @@ export default function Kontak({
                         </div>
                     </section>
                 </main>
+
+                {/* Back link */}
+                <section className="mx-auto max-w-7xl px-6 pb-16">
+                    <Link
+                        href="/"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        Kembali ke Beranda
+                    </Link>
+                </section>
 
                 {/* Footer */}
                 <footer className="border-t border-border">
