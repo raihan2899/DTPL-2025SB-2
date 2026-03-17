@@ -34,9 +34,7 @@ const wisataDestinations = [
     },
 ];
 
-export default function WisataNavbar({
-    navLinks,
-}: WisataNavbarProps) {
+export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
     const { auth } = usePage().props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [wisataOpen, setWisataOpen] = useState(false);
