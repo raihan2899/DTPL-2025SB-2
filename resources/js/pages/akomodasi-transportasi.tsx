@@ -3,11 +3,7 @@ import { ArrowLeft, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 
-export default function AkomodasiTransportasi({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function AkomodasiTransportasi() {
     return (
         <>
             <Head title="Akomodasi & Transportasi — Desa Manud Jaya">
@@ -19,7 +15,7 @@ export default function AkomodasiTransportasi({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} />
+                <WisataNavbar />
 
                 {/* Hero */}
                 <section className="relative">

@@ -11,11 +11,7 @@ import {
 
 import WisataNavbar from '@/components/wisata-navbar';
 
-export default function PuncakManud({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function PuncakManud() {
     return (
         <>
             <Head title="Puncak Manud — Desa Manud Jaya">
@@ -27,7 +23,7 @@ export default function PuncakManud({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} />
+                <WisataNavbar />
 
                 {/* Hero */}
                 <section className="relative">

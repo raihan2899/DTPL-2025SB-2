@@ -2,7 +2,7 @@ import { Link, usePage } from '@inertiajs/react';
 import { Cherry, ChevronDown, Droplets, Menu, Mountain, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-import { dashboard, login, register } from '@/routes';
+import { dashboard } from '@/routes';
 
 interface NavLink {
     href: string;
@@ -10,7 +10,6 @@ interface NavLink {
 }
 
 interface WisataNavbarProps {
-    canRegister?: boolean;
     navLinks?: NavLink[];
 }
 
@@ -36,7 +35,6 @@ const wisataDestinations = [
 ];
 
 export default function WisataNavbar({
-    canRegister = true,
     navLinks,
 }: WisataNavbarProps) {
     const { auth } = usePage().props;
@@ -135,33 +133,14 @@ export default function WisataNavbar({
                             </Link>
                         ),
                     )}
-                    <div className="flex items-center gap-3">
-                        {auth.user ? (
-                            <Link
-                                href={dashboard()}
-                                className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={login()}
-                                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                                >
-                                    Log in
-                                </Link>
-                                {canRegister && (
-                                    <Link
-                                        href={register()}
-                                        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                                    >
-                                        Register
-                                    </Link>
-                                )}
-                            </>
-                        )}
-                    </div>
+                    {auth.user && (
+                        <Link
+                            href={dashboard()}
+                            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                        >
+                            Dashboard
+                        </Link>
+                    )}
                 </div>
 
                 {/* Mobile menu button */}
@@ -237,33 +216,16 @@ export default function WisataNavbar({
                                 </Link>
                             ),
                         )}
-                        <div className="flex items-center gap-3 border-t border-border pt-4">
-                            {auth.user ? (
+                        {auth.user && (
+                            <div className="flex items-center gap-3 border-t border-border pt-4">
                                 <Link
                                     href={dashboard()}
                                     className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
                                 >
                                     Dashboard
                                 </Link>
-                            ) : (
-                                <>
-                                    <Link
-                                        href={login()}
-                                        className="text-sm font-medium text-muted-foreground"
-                                    >
-                                        Log in
-                                    </Link>
-                                    {canRegister && (
-                                        <Link
-                                            href={register()}
-                                            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
-                                        >
-                                            Register
-                                        </Link>
-                                    )}
-                                </>
-                            )}
-                        </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

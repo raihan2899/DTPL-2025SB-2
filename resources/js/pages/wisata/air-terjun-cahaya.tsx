@@ -10,11 +10,7 @@ import {
 
 import WisataNavbar from '@/components/wisata-navbar';
 
-export default function AirTerjunCahaya({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function AirTerjunCahaya() {
     return (
         <>
             <Head title="Air Terjun Manud Jaya — Desa Manud Jaya">
@@ -26,7 +22,7 @@ export default function AirTerjunCahaya({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} />
+                <WisataNavbar />
 
                 {/* Hero */}
                 <section className="relative">

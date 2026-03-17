@@ -12,11 +12,7 @@ import {
 
 import WisataNavbar from '@/components/wisata-navbar';
 
-export default function KebunStroberi({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function KebunStroberi() {
     return (
         <>
             <Head title="Kebun Stroberi Manud Jaya — Desa Manud Jaya">
@@ -28,7 +24,7 @@ export default function KebunStroberi({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} />
+                <WisataNavbar />
 
                 {/* Hero */}
                 <section className="relative">

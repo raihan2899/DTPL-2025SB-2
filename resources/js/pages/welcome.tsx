@@ -2,7 +2,7 @@ import { Head, Link, usePage } from '@inertiajs/react';
 import { Bus, Cherry, Droplets, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
-import { dashboard, register } from '@/routes';
+import { dashboard } from '@/routes';
 
 const destinations = [
     {
@@ -31,11 +31,7 @@ const destinations = [
     },
 ];
 
-export default function Welcome({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function Welcome() {
     const { auth } = usePage().props;
 
     return (
@@ -49,7 +45,7 @@ export default function Welcome({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} />
+                <WisataNavbar />
 
                 <main>
                     {/* Hero */}
@@ -195,31 +191,20 @@ export default function Welcome({
                                 kami. Petualangan Anda dimulai di sini.
                             </p>
                             <div className="relative mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                                {auth.user ? (
+                                {auth.user && (
                                     <Link
                                         href={dashboard()}
                                         className="rounded-lg bg-white px-8 py-3 text-sm font-semibold text-blue-600 shadow-sm transition-colors hover:bg-white/90"
                                     >
                                         Ke Dashboard
                                     </Link>
-                                ) : (
-                                    <>
-                                        {canRegister && (
-                                            <Link
-                                                href={register()}
-                                                className="rounded-lg bg-white px-8 py-3 text-sm font-semibold text-blue-600 shadow-sm transition-colors hover:bg-white/90"
-                                            >
-                                                Daftar Sekarang
-                                            </Link>
-                                        )}
-                                        <a
-                                            href="#destinations"
-                                            className="rounded-lg border border-white/30 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-                                        >
-                                            Lihat Wisata
-                                        </a>
-                                    </>
                                 )}
+                                <a
+                                    href="#destinations"
+                                    className="rounded-lg border border-white/30 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                                >
+                                    Lihat Wisata
+                                </a>
                             </div>
                         </div>
                     </section>

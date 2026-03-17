@@ -3,11 +3,7 @@ import { ArrowLeft, Mail, Mountain, Phone } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 
-export default function Kontak({
-    canRegister = true,
-}: {
-    canRegister?: boolean;
-}) {
+export default function Kontak() {
     return (
         <>
             <Head title="Kontak Kami — Desa Manud Jaya">
@@ -19,7 +15,7 @@ export default function Kontak({
             </Head>
 
             <div className="min-h-screen bg-background text-foreground">
-                <WisataNavbar canRegister={canRegister} />
+                <WisataNavbar />
 
                 {/* Hero */}
                 <section className="relative">
