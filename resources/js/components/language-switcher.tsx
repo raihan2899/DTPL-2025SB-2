@@ -12,7 +12,11 @@ export default function LanguageSwitcher() {
             type="button"
             onClick={toggle}
             className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-            aria-label={lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
+            aria-label={
+                lang === 'id'
+                    ? 'Switch to English'
+                    : 'Ganti ke Bahasa Indonesia'
+            }
         >
             <Globe className="h-4 w-4" />
             {lang === 'id' ? 'EN' : 'ID'}

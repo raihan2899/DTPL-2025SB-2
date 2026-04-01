@@ -160,7 +160,10 @@ export default function KebunStroberi() {
                                                 {t.kebunStroberi.harvestSeason}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                {t.kebunStroberi.harvestSeasonValue}
+                                                {
+                                                    t.kebunStroberi
+                                                        .harvestSeasonValue
+                                                }
                                             </dd>
                                         </div>
                                     </div>
@@ -172,9 +175,13 @@ export default function KebunStroberi() {
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
                                                 <ul className="mt-1 text-xs text-muted-foreground">
-                                                    {t.kebunStroberi.ticketPrices.map((price) => (
-                                                        <li key={price}>{price}</li>
-                                                    ))}
+                                                    {t.kebunStroberi.ticketPrices.map(
+                                                        (price) => (
+                                                            <li key={price}>
+                                                                {price}
+                                                            </li>
+                                                        ),
+                                                    )}
                                                 </ul>
                                             </dd>
                                         </div>

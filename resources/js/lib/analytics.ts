@@ -40,15 +40,16 @@ export function initAnalytics(): void {
         const target = event.target as HTMLElement;
 
         // Find closest clickable element (button or link)
-        const clickable = target.closest('a, button, [role="button"], [role="link"]');
+        const clickable = target.closest(
+            'a, button, [role="button"], [role="link"]',
+        );
         if (!clickable) return;
 
         const element = clickable as HTMLElement;
         const label = getElementLabel(element);
 
         if (element instanceof HTMLAnchorElement) {
-            const isExternal =
-                element.hostname !== window.location.hostname;
+            const isExternal = element.hostname !== window.location.hostname;
 
             window.gtag('event', 'link_click', {
                 link_text: label,
@@ -59,8 +60,7 @@ export function initAnalytics(): void {
         } else {
             window.gtag('event', 'button_click', {
                 button_text: label,
-                button_type:
-                    element.getAttribute('type') || 'button',
+                button_type: element.getAttribute('type') || 'button',
                 button_id: element.id || undefined,
                 button_class: element.className || undefined,
                 click_location: window.location.pathname,

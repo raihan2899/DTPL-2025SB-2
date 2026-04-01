@@ -217,8 +217,7 @@ const id = {
         travelCarTitle: 'Mobil Travel Wisata',
         travelCarPIC: 'PIC: Ibu Sari',
         travelCarPhone: 'Nomor HP: 0813-9988-2211',
-        travelCarPrice:
-            'Harga: Stasiun – Desa Manud Jaya : Rp150.000 / mobil',
+        travelCarPrice: 'Harga: Stasiun – Desa Manud Jaya : Rp150.000 / mobil',
         travelCarVehicle:
             'Spesifikasi Kendaraan: Toyota Avanza / Daihatsu Xenia',
         travelCarCapacity: 'Kapasitas : 5 penumpang',
@@ -304,7 +303,8 @@ const id = {
         email: 'Email',
         phone: 'Telepon',
         locationTitle: 'Lokasi Kami',
-        locationDesc: 'Peta lokasi Desa Manud Jaya dan rute menuju desa wisata.',
+        locationDesc:
+            'Peta lokasi Desa Manud Jaya dan rute menuju desa wisata.',
         directionsTitle: 'Petunjuk Arah',
         directions: [
             'Dari pusat kota, ambil Jalan Raya Pegunungan ke arah selatan.',

@@ -1,5 +1,13 @@
 import { Link, router, usePage } from '@inertiajs/react';
-import { Cherry, ChevronDown, Droplets, LogOut, Menu, Mountain, X } from 'lucide-react';
+import {
+    Cherry,
+    ChevronDown,
+    Droplets,
+    LogOut,
+    Menu,
+    Mountain,
+    X,
+} from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 import LanguageSwitcher from '@/components/language-switcher';

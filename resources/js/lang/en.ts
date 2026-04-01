@@ -186,8 +186,7 @@ const en = {
     // Akomodasi & Transportasi page
     akomodasi: {
         title: 'Accommodation & Transport',
-        heroDesc:
-            'Complete guide to lodging and travel to Desa Manud Jaya.',
+        heroDesc: 'Complete guide to lodging and travel to Desa Manud Jaya.',
         transportTitle: 'Transportation to Desa Wisata Manud Jaya',
         transportP1:
             'Desa Manud Jaya is accessible from Sukabumi train station using private vehicles or local transportation such as motorcycle taxis and travel cars. The journey to the village offers beautiful mountain scenery and increasingly cool air as you approach the village area.',
@@ -217,8 +216,7 @@ const en = {
         travelCarTitle: 'Tourist Travel Car',
         travelCarPIC: 'PIC: Ibu Sari',
         travelCarPhone: 'Phone: 0813-9988-2211',
-        travelCarPrice:
-            'Price: Station – Desa Manud Jaya: Rp150,000 / car',
+        travelCarPrice: 'Price: Station – Desa Manud Jaya: Rp150,000 / car',
         travelCarVehicle: 'Vehicle: Toyota Avanza / Daihatsu Xenia',
         travelCarCapacity: 'Capacity: 5 passengers',
         travelCarFacilitiesLabel: 'Facilities:',
@@ -299,11 +297,12 @@ const en = {
             'Contact us for more information about tourism, accommodation, or visiting Desa Manud Jaya.',
         contactInfoTitle: 'Contact Information',
         contactInfoDesc:
-            'Don\'t hesitate to reach out through any of the following channels. Our team is ready to help you plan the perfect visit.',
+            "Don't hesitate to reach out through any of the following channels. Our team is ready to help you plan the perfect visit.",
         email: 'Email',
         phone: 'Phone',
         locationTitle: 'Our Location',
-        locationDesc: 'Map of Desa Manud Jaya location and route to the tourism village.',
+        locationDesc:
+            'Map of Desa Manud Jaya location and route to the tourism village.',
         directionsTitle: 'Directions',
         directions: [
             'From the city center, take Jalan Raya Pegunungan heading south.',

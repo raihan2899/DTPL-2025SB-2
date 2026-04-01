@@ -76,9 +76,13 @@ export default function AkomodasiTransportasi() {
                                         <li>
                                             {t.akomodasi.ojekPriceLabel}
                                             <ul className="mt-2 list-disc pl-5">
-                                                {t.akomodasi.ojekPrices.map((price) => (
-                                                    <li key={price}>{price}</li>
-                                                ))}
+                                                {t.akomodasi.ojekPrices.map(
+                                                    (price) => (
+                                                        <li key={price}>
+                                                            {price}
+                                                        </li>
+                                                    ),
+                                                )}
                                             </ul>
                                         </li>
                                         <li>{t.akomodasi.ojekVehicle}</li>
@@ -87,9 +91,11 @@ export default function AkomodasiTransportasi() {
                                         <li>
                                             <ul className="mt-2 list-disc pl-5">
                                                 {t.akomodasi.ojekEstLabel}
-                                                {t.akomodasi.ojekEstimates.map((est) => (
-                                                    <li key={est}>{est}</li>
-                                                ))}
+                                                {t.akomodasi.ojekEstimates.map(
+                                                    (est) => (
+                                                        <li key={est}>{est}</li>
+                                                    ),
+                                                )}
                                             </ul>
                                         </li>
                                     </ul>
@@ -103,11 +109,16 @@ export default function AkomodasiTransportasi() {
                                         <li>{t.akomodasi.travelCarVehicle}</li>
                                         <li>{t.akomodasi.travelCarCapacity}</li>
                                         <li>
-                                            {t.akomodasi.travelCarFacilitiesLabel}
+                                            {
+                                                t.akomodasi
+                                                    .travelCarFacilitiesLabel
+                                            }
                                             <ul className="mt-2 list-disc pl-5">
-                                                {t.akomodasi.travelCarFacilities.map((f) => (
-                                                    <li key={f}>{f}</li>
-                                                ))}
+                                                {t.akomodasi.travelCarFacilities.map(
+                                                    (f) => (
+                                                        <li key={f}>{f}</li>
+                                                    ),
+                                                )}
                                             </ul>
                                         </li>
                                         <li>{t.akomodasi.travelCarEst}</li>
@@ -155,9 +166,11 @@ export default function AkomodasiTransportasi() {
                                     <li>
                                         {t.akomodasi.homestayFacilitiesLabel}
                                         <ul className="mt-2 list-disc pl-5">
-                                            {t.akomodasi.homestayFacilities.map((f) => (
-                                                <li key={f}>{f}</li>
-                                            ))}
+                                            {t.akomodasi.homestayFacilities.map(
+                                                (f) => (
+                                                    <li key={f}>{f}</li>
+                                                ),
+                                            )}
                                         </ul>
                                     </li>
                                     <li>{t.akomodasi.homestayCapacity}</li>
@@ -174,9 +187,11 @@ export default function AkomodasiTransportasi() {
                                     <li>
                                         {t.akomodasi.bukitFacilitiesLabel}
                                         <ul className="mt-2 list-disc pl-5">
-                                            {t.akomodasi.bukitFacilities.map((f) => (
-                                                <li key={f}>{f}</li>
-                                            ))}
+                                            {t.akomodasi.bukitFacilities.map(
+                                                (f) => (
+                                                    <li key={f}>{f}</li>
+                                                ),
+                                            )}
                                         </ul>
                                     </li>
                                     <li>{t.akomodasi.bukitCapacity}</li>

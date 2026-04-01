@@ -127,7 +127,10 @@ export default function PuncakManud() {
                                                 {t.puncakManud.hikeDuration}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                {t.puncakManud.hikeDurationValue}
+                                                {
+                                                    t.puncakManud
+                                                        .hikeDurationValue
+                                                }
                                             </dd>
                                         </div>
                                     </div>
@@ -138,7 +141,10 @@ export default function PuncakManud() {
                                                 {t.puncakManud.elevationGain}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                {t.puncakManud.elevationGainValue}
+                                                {
+                                                    t.puncakManud
+                                                        .elevationGainValue
+                                                }
                                             </dd>
                                         </div>
                                     </div>

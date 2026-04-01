@@ -129,7 +129,10 @@ export default function AirTerjunCahaya() {
                                                 {t.airTerjun.waterfallHeight}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                {t.airTerjun.waterfallHeightValue}
+                                                {
+                                                    t.airTerjun
+                                                        .waterfallHeightValue
+                                                }
                                             </dd>
                                         </div>
                                     </div>
@@ -163,9 +166,13 @@ export default function AirTerjunCahaya() {
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
                                                 <ul className="list-inside list-disc">
-                                                    {t.airTerjun.ticketPrices.map((price) => (
-                                                        <li key={price}>{price}</li>
-                                                    ))}
+                                                    {t.airTerjun.ticketPrices.map(
+                                                        (price) => (
+                                                            <li key={price}>
+                                                                {price}
+                                                            </li>
+                                                        ),
+                                                    )}
                                                 </ul>
                                             </dd>
                                         </div>
