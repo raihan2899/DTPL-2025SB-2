@@ -5,6 +5,10 @@ const id = {
         akomodasiTransportasi: 'Akomodasi & Transportasi',
         kontakKami: 'Kontak Kami',
         dashboard: 'Dashboard',
+        login: 'Masuk',
+        register: 'Daftar',
+        greeting: 'Halo,',
+        logout: 'Keluar',
     },
 
     // Navbar dropdown descriptions

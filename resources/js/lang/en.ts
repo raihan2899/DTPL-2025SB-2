@@ -5,6 +5,10 @@ const en = {
         akomodasiTransportasi: 'Accommodation & Transport',
         kontakKami: 'Contact Us',
         dashboard: 'Dashboard',
+        login: 'Login',
+        register: 'Register',
+        greeting: 'Hello,',
+        logout: 'Log out',
     },
 
     // Navbar dropdown descriptions

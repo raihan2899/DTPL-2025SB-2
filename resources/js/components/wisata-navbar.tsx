@@ -1,10 +1,10 @@
-import { Link, usePage } from '@inertiajs/react';
-import { Cherry, ChevronDown, Droplets, Menu, Mountain, X } from 'lucide-react';
+import { Link, router, usePage } from '@inertiajs/react';
+import { Cherry, ChevronDown, Droplets, LogOut, Menu, Mountain, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 import LanguageSwitcher from '@/components/language-switcher';
 import { useLanguage } from '@/contexts/language-context';
-import { dashboard } from '@/routes';
+import { logout } from '@/routes';
 
 interface NavLink {
     href: string;
@@ -20,7 +20,9 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
     const { auth } = usePage().props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [wisataOpen, setWisataOpen] = useState(false);
+    const [userOpen, setUserOpen] = useState(false);
     const wisataRef = useRef<HTMLDivElement>(null);
+    const userRef = useRef<HTMLDivElement>(null);
 
     const wisataDestinations = [
         {
@@ -50,7 +52,7 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
 
     const links = navLinks ?? defaultLinks;
 
-    // Close dropdown when clicking outside
+    // Close dropdowns when clicking outside
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {
             if (
@@ -58,6 +60,12 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                 !wisataRef.current.contains(e.target as Node)
             ) {
                 setWisataOpen(false);
+            }
+            if (
+                userRef.current &&
+                !userRef.current.contains(e.target as Node)
+            ) {
+                setUserOpen(false);
             }
         }
         document.addEventListener('mousedown', handleClickOutside);
@@ -137,13 +145,50 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
 
                     <LanguageSwitcher />
 
-                    {auth.user && (
-                        <Link
-                            href={dashboard()}
-                            className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                        >
-                            {t.nav.dashboard}
-                        </Link>
+                    {auth.user ? (
+                        <div ref={userRef} className="relative">
+                            <button
+                                type="button"
+                                className="flex items-center gap-1 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                                onClick={() => setUserOpen(!userOpen)}
+                            >
+                                {t.nav.greeting} {auth.user.name}
+                                <ChevronDown
+                                    className={`h-4 w-4 transition-transform ${userOpen ? 'rotate-180' : ''}`}
+                                />
+                            </button>
+                            {userOpen && (
+                                <div className="absolute top-full right-0 mt-2 w-48 rounded-xl border border-border bg-background p-2 shadow-lg">
+                                    <Link
+                                        href={logout()}
+                                        as="button"
+                                        className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-destructive transition-colors hover:bg-accent"
+                                        onClick={() => {
+                                            setUserOpen(false);
+                                            router.flushAll();
+                                        }}
+                                    >
+                                        <LogOut className="h-4 w-4" />
+                                        {t.nav.logout}
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <>
+                            <Link
+                                href="/login"
+                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                            >
+                                {t.nav.login}
+                            </Link>
+                            <Link
+                                href="/register"
+                                className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                            >
+                                {t.nav.register}
+                            </Link>
+                        </>
                     )}
                 </div>
 
@@ -223,16 +268,42 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
 
                         <LanguageSwitcher />
 
-                        {auth.user && (
-                            <div className="flex items-center gap-3 border-t border-border pt-4">
-                                <Link
-                                    href={dashboard()}
-                                    className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
-                                >
-                                    {t.nav.dashboard}
-                                </Link>
-                            </div>
-                        )}
+                        <div className="flex flex-col gap-3 border-t border-border pt-4">
+                            {auth.user ? (
+                                <>
+                                    <span className="text-sm font-medium">
+                                        {t.nav.greeting} {auth.user.name}
+                                    </span>
+                                    <Link
+                                        href={logout()}
+                                        as="button"
+                                        className="flex items-center gap-2 text-sm font-medium text-destructive transition-colors hover:text-destructive/80"
+                                        onClick={() => {
+                                            setMobileMenuOpen(false);
+                                            router.flushAll();
+                                        }}
+                                    >
+                                        <LogOut className="h-4 w-4" />
+                                        {t.nav.logout}
+                                    </Link>
+                                </>
+                            ) : (
+                                <div className="flex items-center gap-3">
+                                    <Link
+                                        href="/login"
+                                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                                    >
+                                        {t.nav.login}
+                                    </Link>
+                                    <Link
+                                        href="/register"
+                                        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+                                    >
+                                        {t.nav.register}
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             )}

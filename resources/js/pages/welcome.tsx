@@ -1,13 +1,11 @@
-import { Head, Link, usePage } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { Bus, Cherry, Droplets, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
 import { useLanguage } from '@/contexts/language-context';
-import { dashboard } from '@/routes';
 
 export default function Welcome() {
     const { t } = useLanguage();
-    const { auth } = usePage().props;
 
     const destinations = [
         {
@@ -179,14 +177,6 @@ export default function Welcome() {
                                 {t.welcome.ctaDesc}
                             </p>
                             <div className="relative mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                                {auth.user && (
-                                    <Link
-                                        href={dashboard()}
-                                        className="rounded-lg bg-white px-8 py-3 text-sm font-semibold text-blue-600 shadow-sm transition-colors hover:bg-white/90"
-                                    >
-                                        {t.welcome.toDashboard}
-                                    </Link>
-                                )}
                                 <a
                                     href="#destinations"
                                     className="rounded-lg border border-white/30 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
