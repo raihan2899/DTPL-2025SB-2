@@ -9,8 +9,11 @@ import {
 } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function AirTerjunCahaya() {
+    const { t } = useLanguage();
+
     return (
         <>
             <Head title="Air Terjun Manud Jaya — Desa Manud Jaya">
@@ -35,12 +38,10 @@ export default function AirTerjunCahaya() {
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="mx-auto max-w-2xl px-6 text-center">
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                                Air Terjun Manud Jaya
+                                {t.airTerjun.title}
                             </h1>
                             <p className="mt-4 text-lg text-white/80">
-                                A stunning 40-meter waterfall hidden in the
-                                tropical forest, perfect for swimming and nature
-                                photography.
+                                {t.airTerjun.heroDesc}
                             </p>
                         </div>
                     </div>
@@ -52,41 +53,23 @@ export default function AirTerjunCahaya() {
                         {/* Main content */}
                         <div className="lg:col-span-2">
                             <h2 className="text-2xl font-bold">
-                                Tentang Air Terjun Manud Jaya
+                                {t.airTerjun.aboutTitle}
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Air Terjun Manud Jaya merupakan salah satu
-                                keindahan alam yang menjadi daya tarik utama
-                                desa ini. Terletak di kawasan hutan yang masih
-                                alami, air terjun ini menawarkan suasana yang
-                                sejuk, tenang, dan menyegarkan bagi para
-                                pengunjung.
+                                {t.airTerjun.aboutP1}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Untuk mencapai lokasi air terjun, pengunjung
-                                perlu melakukan trekking ringan selama sekitar
-                                15–20 menit dari area parkir. Sepanjang
-                                perjalanan, wisatawan akan melewati jalur alami
-                                dengan pemandangan pepohonan hijau dan suara
-                                alam yang menenangkan.
+                                {t.airTerjun.aboutP2}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Sesampainya di lokasi, pengunjung dapat
-                                menikmati air terjun dengan air yang jernih
-                                serta suasana alam yang masih sangat asri.
+                                {t.airTerjun.aboutP3}
                             </p>
 
                             <h3 className="mt-10 text-xl font-semibold">
-                                Highlights
+                                {t.airTerjun.highlightsTitle}
                             </h3>
                             <ul className="mt-4 space-y-3">
-                                {[
-                                    'Trekking ringan menuju air terjun',
-                                    'Menikmati panorama alam sekitar',
-                                    'Bermain air di area air terjun',
-                                    'Berfoto di spot alam yang indah',
-                                    'Bersantai menikmati udara pegunungan',
-                                ].map((item) => (
+                                {t.airTerjun.highlights.map((item) => (
                                     <li
                                         key={item}
                                         className="flex items-start gap-3"
@@ -100,17 +83,10 @@ export default function AirTerjunCahaya() {
                             </ul>
 
                             <h3 className="mt-10 text-xl font-semibold">
-                                Yang Perlu Dibawa
+                                {t.airTerjun.bringTitle}
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                                {[
-                                    'Sepatu trekking anti-slip',
-                                    'Pakaian ganti & handuk',
-                                    'Botol air minum',
-                                    'Sunscreen & topi',
-                                    'Kamera waterproof',
-                                    'Kantong plastik untuk sampah',
-                                ].map((item) => (
+                                {t.airTerjun.bringItems.map((item) => (
                                     <div
                                         key={item}
                                         className="flex items-center gap-3 rounded-lg border border-border bg-card p-3"
@@ -123,16 +99,16 @@ export default function AirTerjunCahaya() {
                                 ))}
                             </div>
 
-                            {/* Gallery placeholder */}
+                            {/* Gallery */}
                             <h3 className="mt-10 text-xl font-semibold">
-                                Galeri
+                                {t.airTerjun.galleryTitle}
                             </h3>
                             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                                 {Array.from({ length: 6 }).map((_, i) => (
                                     <img
                                         key={i}
                                         src={`/images/airterjun_galeri_${i + 1}.png`}
-                                        alt={`Galeri Air Terjun ${i + 1}`}
+                                        alt={`${t.airTerjun.galleryTitle} Air Terjun ${i + 1}`}
                                         className="aspect-[4/3] rounded-xl object-cover"
                                     />
                                 ))}
@@ -143,17 +119,17 @@ export default function AirTerjunCahaya() {
                         <div>
                             <div className="rounded-xl border border-border bg-card p-6">
                                 <h3 className="text-lg font-semibold">
-                                    Informasi
+                                    {t.airTerjun.infoTitle}
                                 </h3>
                                 <dl className="mt-4 space-y-4">
                                     <div className="flex items-start gap-3">
                                         <Ruler className="mt-0.5 h-5 w-5 text-blue-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Ketinggian Air Terjun
+                                                {t.airTerjun.waterfallHeight}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                ~40 meter
+                                                {t.airTerjun.waterfallHeightValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -161,11 +137,10 @@ export default function AirTerjunCahaya() {
                                         <Signpost className="mt-0.5 h-5 w-5 text-blue-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Jarak Jalur
+                                                {t.airTerjun.trailDistance}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                1,5 km dari titik parkir (30-45
-                                                menit)
+                                                {t.airTerjun.trailDistanceValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -173,11 +148,10 @@ export default function AirTerjunCahaya() {
                                         <Waves className="mt-0.5 h-5 w-5 text-blue-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Berenang
+                                                {t.airTerjun.swimming}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                Ya — kolam alami dengan
-                                                kedalaman 1,5-3 meter
+                                                {t.airTerjun.swimmingValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -185,36 +159,13 @@ export default function AirTerjunCahaya() {
                                         <Waves className="mt-0.5 h-5 w-5 text-blue-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Harga Tiket Masuk
+                                                {t.airTerjun.ticketPrice}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
                                                 <ul className="list-inside list-disc">
-                                                    <li>
-                                                        Tiket masuk : Rp10.000 /
-                                                        orang
-                                                    </li>
-                                                    <li>
-                                                        Tiket trekking area :
-                                                        Rp5.000
-                                                    </li>
-                                                    <li>
-                                                        Parkir motor : Rp5.000
-                                                    </li>
-                                                    <li>
-                                                        Parkir mobil : Rp10.000
-                                                    </li>
-                                                    <li>
-                                                        Sewa tracking pole : Rp
-                                                        15.000 / hari
-                                                    </li>
-                                                    <li>
-                                                        Guide : Rp 150.000 /
-                                                        hari
-                                                    </li>
-                                                    <li>
-                                                        Ban / Pelanpung : Rp
-                                                        10.000
-                                                    </li>
+                                                    {t.airTerjun.ticketPrices.map((price) => (
+                                                        <li key={price}>{price}</li>
+                                                    ))}
                                                 </ul>
                                             </dd>
                                         </div>
@@ -232,7 +183,7 @@ export default function AirTerjunCahaya() {
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        Kembali ke Beranda
+                        {t.airTerjun.backToHome}
                     </Link>
                 </section>
             </div>

@@ -2,8 +2,11 @@ import { Head, Link } from '@inertiajs/react';
 import { ArrowLeft, Mail, Mountain, Phone } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function Kontak() {
+    const { t } = useLanguage();
+
     return (
         <>
             <Head title="Kontak Kami — Desa Manud Jaya">
@@ -21,19 +24,17 @@ export default function Kontak() {
                 <section className="relative">
                     <img
                         src="/images/kontak_hero.png"
-                        alt="Kontak Kami"
+                        alt={t.kontak.title}
                         className="block w-full"
                     />
                     <div className="absolute inset-0 bg-black/50" />
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="mx-auto max-w-2xl px-6 text-center">
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                                Kontak Kami
+                                {t.kontak.title}
                             </h1>
                             <p className="mt-4 text-lg text-white/80">
-                                Hubungi kami untuk informasi lebih lanjut
-                                tentang wisata, penginapan, atau kunjungan ke
-                                Desa Manud Jaya.
+                                {t.kontak.heroDesc}
                             </p>
                         </div>
                     </div>
@@ -45,13 +46,10 @@ export default function Kontak() {
                             {/* Contact Info */}
                             <div>
                                 <h2 className="text-2xl font-bold">
-                                    Informasi Kontak
+                                    {t.kontak.contactInfoTitle}
                                 </h2>
                                 <p className="mt-4 text-muted-foreground">
-                                    Jangan ragu untuk menghubungi kami melalui
-                                    salah satu cara berikut. Tim kami siap
-                                    membantu Anda merencanakan kunjungan yang
-                                    sempurna.
+                                    {t.kontak.contactInfoDesc}
                                 </p>
 
                                 <div className="mt-8 space-y-6">
@@ -62,7 +60,7 @@ export default function Kontak() {
                                         </div>
                                         <div>
                                             <h3 className="font-semibold">
-                                                Email
+                                                {t.kontak.email}
                                             </h3>
                                             <p className="mt-1 text-sm text-muted-foreground">
                                                 humasManudJaya@gmail.com
@@ -77,7 +75,7 @@ export default function Kontak() {
                                         </div>
                                         <div>
                                             <h3 className="font-semibold">
-                                                Telepon
+                                                {t.kontak.phone}
                                             </h3>
                                             <p className="mt-1 text-sm text-muted-foreground">
                                                 +62 812 – 1122 3344 (Bapak
@@ -92,14 +90,13 @@ export default function Kontak() {
                                 </div>
                             </div>
 
-                            {/* Map Placeholder */}
+                            {/* Map */}
                             <div>
                                 <h2 className="text-2xl font-bold">
-                                    Lokasi Kami
+                                    {t.kontak.locationTitle}
                                 </h2>
                                 <p className="mt-4 text-muted-foreground">
-                                    Peta lokasi Desa Manud Jaya dan rute menuju
-                                    desa wisata.
+                                    {t.kontak.locationDesc}
                                 </p>
                                 <img
                                     src="/images/kontak_peta.png"
@@ -107,18 +104,13 @@ export default function Kontak() {
                                     className="mt-8 aspect-[4/3] w-full rounded-xl object-cover"
                                 />
 
-                                {/* Directions summary */}
+                                {/* Directions */}
                                 <div className="mt-6 rounded-xl border border-border bg-card p-6">
                                     <h3 className="font-semibold">
-                                        Petunjuk Arah
+                                        {t.kontak.directionsTitle}
                                     </h3>
                                     <ul className="mt-3 space-y-2">
-                                        {[
-                                            'Dari pusat kota, ambil Jalan Raya Pegunungan ke arah selatan.',
-                                            'Ikuti jalan utama selama ± 50 km melewati Kecamatan Lembah.',
-                                            'Belok kanan di pertigaan Pos Jaga Gunung, ikuti papan petunjuk "Desa Manud Jaya".',
-                                            'Jalan terus ± 10 km hingga tiba di gerbang desa.',
-                                        ].map((step, i) => (
+                                        {t.kontak.directions.map((step, i) => (
                                             <li
                                                 key={step}
                                                 className="flex items-start gap-3 text-sm text-muted-foreground"
@@ -143,7 +135,7 @@ export default function Kontak() {
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        Kembali ke Beranda
+                        {t.kontak.backToHome}
                     </Link>
                 </section>
 
@@ -156,8 +148,7 @@ export default function Kontak() {
                                 <span>Desa Manud Jaya</span>
                             </div>
                             <p className="text-sm text-muted-foreground">
-                                &copy; 2026 Desa Manud Jaya. Hak cipta
-                                dilindungi.
+                                {t.kontak.copyright}
                             </p>
                         </div>
                     </div>

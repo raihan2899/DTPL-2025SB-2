@@ -2,8 +2,11 @@ import { Head, Link } from '@inertiajs/react';
 import { ArrowLeft, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function AkomodasiTransportasi() {
+    const { t } = useLanguage();
+
     return (
         <>
             <Head title="Akomodasi & Transportasi — Desa Manud Jaya">
@@ -21,18 +24,17 @@ export default function AkomodasiTransportasi() {
                 <section className="relative">
                     <img
                         src="/images/akomodasi_hero.png"
-                        alt="Akomodasi & Transportasi"
+                        alt={t.akomodasi.title}
                         className="block w-full"
                     />
                     <div className="absolute inset-0 bg-black/50" />
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="mx-auto max-w-2xl px-6 text-center">
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                                Akomodasi & Transportasi
+                                {t.akomodasi.title}
                             </h1>
                             <p className="mt-4 text-lg text-white/80">
-                                Panduan lengkap penginapan dan perjalanan menuju
-                                Desa Manud Jaya.
+                                {t.akomodasi.heroDesc}
                             </p>
                         </div>
                     </div>
@@ -43,237 +45,170 @@ export default function AkomodasiTransportasi() {
                     <div className="prose prose-lg dark:prose-invert max-w-none">
                         {/* Transportasi */}
                         <h2 className="mt-16 text-2xl font-bold">
-                            Transportasi Menuju Desa Wisata Manud Jaya
+                            {t.akomodasi.transportTitle}
                         </h2>
                         <p className="mt-4 leading-relaxed text-muted-foreground">
-                            Desa Manud Jaya dapat diakses dari stasiun kereta
-                            sukabumi dengan menggunakan kendaraan pribadi maupun
-                            transportasi lokal seperti ojek wisata dan mobil
-                            travel. Perjalanan menuju desa menawarkan
-                            pemandangan alam pegunungan yang indah dan udara
-                            yang semakin sejuk ketika mendekati kawasan desa.
+                            {t.akomodasi.transportP1}
                         </p>
                         <p className="mt-4 leading-relaxed text-muted-foreground">
-                            Jarak ke Desa Manud Jaya dari stasiun sukabumi: ±18
-                            km
+                            {t.akomodasi.transportDistance}
                         </p>
 
                         <h3 className="mt-10 text-xl font-semibold">
-                            Perkiraan waktu perjalanan:
+                            {t.akomodasi.travelTimeTitle}
                         </h3>
                         <ul className="mt-3 list-disc pl-5 text-muted-foreground">
-                            <li>Mobil : 35 – 45 menit</li>
-                            <li>Motor : 30 – 40 menit</li>
+                            {t.akomodasi.travelTimes.map((time) => (
+                                <li key={time}>{time}</li>
+                            ))}
                         </ul>
 
                         <h3 className="mt-10 text-xl font-semibold">
-                            Transportasi Lokal
+                            {t.akomodasi.localTransportTitle}
                         </h3>
                         <p className="mt-3 leading-relaxed text-muted-foreground">
                             <ol className="list-decimal pl-5">
                                 <li>
-                                    <h4>Ojek Wisata Manud Jaya</h4>
+                                    <h4>{t.akomodasi.ojekTitle}</h4>
                                     <ul className="mt-2 list-disc pl-5">
-                                        <li> PIC: Pak Rudi </li>
-                                        <li>Nomor HP: 0812-3456-8890</li>
+                                        <li>{t.akomodasi.ojekPIC}</li>
+                                        <li>{t.akomodasi.ojekPhone}</li>
                                         <li>
-                                            Harga:
+                                            {t.akomodasi.ojekPriceLabel}
                                             <ul className="mt-2 list-disc pl-5">
-                                                <li>
-                                                    Stasiun – Desa Manud Jaya :
-                                                    Rp35.000 / orang
-                                                </li>
-                                                <li>
-                                                    Desa – Air Terjun : Rp15.000
-                                                </li>
-                                                <li>
-                                                    Desa – Basecamp Gunung :
-                                                    Rp20.000
-                                                </li>
+                                                {t.akomodasi.ojekPrices.map((price) => (
+                                                    <li key={price}>{price}</li>
+                                                ))}
                                             </ul>
                                         </li>
-                                        <li>
-                                            Spesifikasi Kendaraan: Motor trail /
-                                            motor bebek wisata
-                                        </li>
-                                        <li>Kapasitas : 1 penumpang</li>
-                                        <li>
-                                            Cocok untuk jalur desa dan jalan
-                                            pegunungan
-                                        </li>
+                                        <li>{t.akomodasi.ojekVehicle}</li>
+                                        <li>{t.akomodasi.ojekCapacity}</li>
+                                        <li>{t.akomodasi.ojekNote}</li>
                                         <li>
                                             <ul className="mt-2 list-disc pl-5">
-                                                Estimasi Perjalanan:
-                                                <li>
-                                                    Stasiun → Desa : 30 menit
-                                                </li>
-                                                <li>
-                                                    Desa → Air Terjun : 10 menit
-                                                </li>
-                                                <li>
-                                                    Desa → Basecamp Gunung : 15
-                                                    menit
-                                                </li>
+                                                {t.akomodasi.ojekEstLabel}
+                                                {t.akomodasi.ojekEstimates.map((est) => (
+                                                    <li key={est}>{est}</li>
+                                                ))}
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <h4>Mobil Travel Wisata</h4>
+                                    <h4>{t.akomodasi.travelCarTitle}</h4>
                                     <ul className="mt-2 list-disc pl-5">
-                                        <li>PIC: Ibu Sari</li>
-                                        <li>Nomor HP: 0813-9988-2211</li>
+                                        <li>{t.akomodasi.travelCarPIC}</li>
+                                        <li>{t.akomodasi.travelCarPhone}</li>
+                                        <li>{t.akomodasi.travelCarPrice}</li>
+                                        <li>{t.akomodasi.travelCarVehicle}</li>
+                                        <li>{t.akomodasi.travelCarCapacity}</li>
                                         <li>
-                                            Harga: Stasiun – Desa Manud Jaya :
-                                            Rp150.000 / mobil
-                                        </li>
-                                        <li>
-                                            Spesifikasi Kendaraan: Toyota Avanza
-                                            / Daihatsu Xenia
-                                        </li>
-                                        <li>Kapasitas : 5 penumpang</li>
-                                        <li>
-                                            Fasilitas:
+                                            {t.akomodasi.travelCarFacilitiesLabel}
                                             <ul className="mt-2 list-disc pl-5">
-                                                <li>AC</li>
-                                                <li>
-                                                    Bagasi untuk barang
-                                                    wisatawan
-                                                </li>
+                                                {t.akomodasi.travelCarFacilities.map((f) => (
+                                                    <li key={f}>{f}</li>
+                                                ))}
                                             </ul>
                                         </li>
-                                        <li>
-                                            Estimasi Perjalanan: Stasiun → Desa
-                                            : 40 menit
-                                        </li>
+                                        <li>{t.akomodasi.travelCarEst}</li>
                                     </ul>
                                 </li>
 
                                 <li>
                                     {' '}
-                                    Sewa Motor Wisata
+                                    {t.akomodasi.rentalTitle}
                                     <ul className="mt-2 list-disc pl-5">
-                                        <li>PIC: Pak Dani</li>
-                                        <li>Nomor HP: 0812-7722-5566</li>
-                                        <li>
-                                            Harga: Sewa motor : Rp80.000 / hari
-                                        </li>
-                                        <li>Helm : termasuk</li>
-                                        <li>
-                                            Spesifikasi Kendaraan: Honda Beat /
-                                            Yamaha Mio
-                                        </li>
-                                        <li>Kapasitas : 2 orang</li>
-                                        <li>Bahan bakar : bensin</li>
-                                        <li>
-                                            Estimasi Perjalanan: Stasiun → Desa
-                                            : 35 menit
-                                        </li>
+                                        <li>{t.akomodasi.rentalPIC}</li>
+                                        <li>{t.akomodasi.rentalPhone}</li>
+                                        <li>{t.akomodasi.rentalPrice}</li>
+                                        <li>{t.akomodasi.rentalHelm}</li>
+                                        <li>{t.akomodasi.rentalVehicle}</li>
+                                        <li>{t.akomodasi.rentalCapacity}</li>
+                                        <li>{t.akomodasi.rentalFuel}</li>
+                                        <li>{t.akomodasi.rentalEst}</li>
                                     </ul>
                                 </li>
                             </ol>
                         </p>
 
                         <h3 className="mt-10 text-xl font-semibold">
-                            Kendaraan Pribadi / Rental
+                            {t.akomodasi.privateVehicleTitle}
                         </h3>
                         <p className="mt-3 leading-relaxed text-muted-foreground">
-                            Akses jalan menuju desa sudah beraspal dengan baik.
-                            Dari pusat kota, ambil Jalan Raya Pegunungan ke arah
-                            selatan, lalu ikuti papan petunjuk menuju Desa Manud
-                            Jaya. Perjalanan memakan waktu sekitar 2 jam.
-                            Tersedia area parkir luas di pusat desa. Bagi yang
-                            tidak membawa kendaraan, rental mobil tersedia di
-                            kota dengan harga mulai{' '}
-                            <strong>Rp 300.000 per hari</strong>. Pastikan
-                            kendaraan dalam kondisi baik karena sebagian jalan
-                            berupa tanjakan.
+                            {t.akomodasi.privateVehicleDesc}{' '}
+                            <strong>{t.akomodasi.privateVehiclePrice}</strong>
+                            {t.akomodasi.privateVehicleNote}
                         </p>
                         {/* Penginapan */}
                         <h2 className="text-2xl font-bold">
-                            Penginapan di Desa Manud Jaya{' '}
+                            {t.akomodasi.accommodationTitle}{' '}
                         </h2>
                         <ol className="mt-3 list-decimal space-y-8 pl-5 text-muted-foreground">
                             <li>
                                 <h4 className="font-semibold text-foreground">
-                                    Manud Jaya Homestay
+                                    {t.akomodasi.homestayTitle}
                                 </h4>
                                 <ul className="mt-2 list-disc pl-5">
-                                    <li>PIC: Ibu Lina</li>
-                                    <li>Nomor HP: 0813-3344-7788</li>
-                                    <li>Harga: Rp150.000 / malam</li>
+                                    <li>{t.akomodasi.homestayPIC}</li>
+                                    <li>{t.akomodasi.homestayPhone}</li>
+                                    <li>{t.akomodasi.homestayPrice}</li>
                                     <li>
-                                        Fasilitas:
+                                        {t.akomodasi.homestayFacilitiesLabel}
                                         <ul className="mt-2 list-disc pl-5">
-                                            <li>1 kamar tidur</li>
-                                            <li>Tempat tidur double</li>
-                                            <li>Kamar mandi dalam</li>
-                                            <li>Air panas</li>
-                                            <li>WiFi</li>
-                                            <li>Sarapan sederhana</li>
+                                            {t.akomodasi.homestayFacilities.map((f) => (
+                                                <li key={f}>{f}</li>
+                                            ))}
                                         </ul>
                                     </li>
-                                    <li>Kapasitas: 2 – 3 orang</li>
+                                    <li>{t.akomodasi.homestayCapacity}</li>
                                 </ul>
                             </li>
                             <li>
                                 <h4 className="font-semibold text-foreground">
-                                    Penginapan Bukit Manud
+                                    {t.akomodasi.bukitTitle}
                                 </h4>
                                 <ul className="mt-2 list-disc pl-5">
-                                    <li>PIC: Pak Agus</li>
-                                    <li>Nomor HP: 0812-2233-4455</li>
-                                    <li>Harga: Rp250.000 / malam</li>
+                                    <li>{t.akomodasi.bukitPIC}</li>
+                                    <li>{t.akomodasi.bukitPhone}</li>
+                                    <li>{t.akomodasi.bukitPrice}</li>
                                     <li>
-                                        Fasilitas:
+                                        {t.akomodasi.bukitFacilitiesLabel}
                                         <ul className="mt-2 list-disc pl-5">
-                                            <li>
-                                                Kamar dengan pemandangan
-                                                pegunungan
-                                            </li>
-                                            <li>Kamar mandi dalam</li>
-                                            <li>Air panas</li>
-                                            <li>Balkon</li>
-                                            <li>Area parkir</li>
+                                            {t.akomodasi.bukitFacilities.map((f) => (
+                                                <li key={f}>{f}</li>
+                                            ))}
                                         </ul>
                                     </li>
-                                    <li>Kapasitas: 2 – 4 orang</li>
+                                    <li>{t.akomodasi.bukitCapacity}</li>
                                 </ul>
                             </li>
                         </ol>
 
                         <h3 className="mt-10 text-xl font-semibold">
-                            Basecamp Pendaki Gunung Manud Jaya
+                            {t.akomodasi.basecampTitle}
                         </h3>
                         <p className="mt-3 leading-relaxed text-muted-foreground">
-                            Bagi para pendaki yang ingin melakukan pendakian ke
-                            Puncak Gunung Manud Jaya (2110 mdpl), tersedia
-                            basecamp pendaki yang menyediakan tempat istirahat
-                            sederhana sebelum memulai pendakian.
+                            {t.akomodasi.basecampDesc}
                         </p>
                         <ul className="mt-3 list-disc pl-5 text-muted-foreground">
-                            <li>Nama Basecamp: Basecamp Pendaki Manud Jaya</li>
-                            <li>PIC: Pak Arman</li>
-                            <li>Nomor HP: 0813-5566-7788</li>
-                            <li>Harga Menginap: Rp20.000 / orang / malam</li>
+                            <li>{t.akomodasi.basecampName}</li>
+                            <li>{t.akomodasi.basecampPIC}</li>
+                            <li>{t.akomodasi.basecampPhone}</li>
+                            <li>{t.akomodasi.basecampPrice}</li>
                             <li>
-                                Fasilitas:
+                                {t.akomodasi.basecampFacilitiesLabel}
                                 <ul className="mt-2 list-disc pl-5">
-                                    <li>Area istirahat pendaki</li>
-                                    <li>Toilet</li>
-                                    <li>Mushola</li>
-                                    <li>Warung makan</li>
-                                    <li>Tempat parkir kendaraan</li>
-                                    <li>Informasi jalur pendakian</li>
+                                    {t.akomodasi.basecampFacilities.map((f) => (
+                                        <li key={f}>{f}</li>
+                                    ))}
                                 </ul>
                             </li>
                             <li>
-                                Layanan Tambahan:
+                                {t.akomodasi.basecampExtrasLabel}
                                 <ul className="mt-2 list-disc pl-5">
-                                    <li>
-                                        Ojek Basecamp → Pos 1 : Rp40.000 / orang
-                                    </li>
-                                    <li>Guide pendakian : Rp150.000 / grup</li>
+                                    {t.akomodasi.basecampExtras.map((e) => (
+                                        <li key={e}>{e}</li>
+                                    ))}
                                 </ul>
                             </li>
                         </ul>
@@ -287,7 +222,7 @@ export default function AkomodasiTransportasi() {
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        Kembali ke Beranda
+                        {t.akomodasi.backToHome}
                     </Link>
                 </section>
 
@@ -300,8 +235,7 @@ export default function AkomodasiTransportasi() {
                                 <span>Desa Manud Jaya</span>
                             </div>
                             <p className="text-sm text-muted-foreground">
-                                &copy; 2026 Desa Manud Jaya. Hak cipta
-                                dilindungi.
+                                {t.akomodasi.copyright}
                             </p>
                         </div>
                     </div>

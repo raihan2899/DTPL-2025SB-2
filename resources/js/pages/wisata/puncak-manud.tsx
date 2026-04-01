@@ -2,16 +2,19 @@ import { Head, Link } from '@inertiajs/react';
 import {
     ArrowLeft,
     Clock,
+    Footprints,
+    Info,
     Mountain,
     Signpost,
-    Info,
-    Footprints,
     TrendingUp,
 } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function PuncakManud() {
+    const { t } = useLanguage();
+
     return (
         <>
             <Head title="Puncak Manud — Desa Manud Jaya">
@@ -36,12 +39,10 @@ export default function PuncakManud() {
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="mx-auto max-w-2xl px-6 text-center">
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                                Puncak Manud
+                                {t.puncakManud.title}
                             </h1>
                             <p className="mt-4 text-lg text-white/80">
-                                Panoramic mountain viewpoint offering
-                                breathtaking sunrise vistas over the village and
-                                surrounding valleys.
+                                {t.puncakManud.heroDesc}
                             </p>
                         </div>
                     </div>
@@ -53,50 +54,26 @@ export default function PuncakManud() {
                         {/* Main content */}
                         <div className="lg:col-span-2">
                             <h2 className="text-2xl font-bold">
-                                Tentang Puncak Manud
+                                {t.puncakManud.aboutTitle}
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Puncak Gunung Manud Jaya merupakan destinasi
-                                wisata alam bagi para pecinta petualangan dan
-                                pendaki. Gunung ini memiliki ketinggian sekitar
-                                2.110 mdpl (meter di atas permukaan laut) dan
-                                menawarkan panorama alam yang luar biasa dari
-                                puncaknya.
+                                {t.puncakManud.aboutP1}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Dari puncak gunung, pengunjung dapat menikmati
-                                pemandangan hamparan pegunungan, kebun
-                                pertanian, serta lanskap desa yang terlihat
-                                sangat indah terutama saat matahari terbit
-                                (sunrise) maupun matahari terbenam (sunset).
+                                {t.puncakManud.aboutP2}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Pendakian dapat dimulai dari basecamp yang
-                                tersedia di desa. Untuk mempermudah akses,
-                                tersedia ojek gunung yang dapat mengantar
-                                pengunjung hingga Pos 1. Dari Pos 1 menuju
-                                puncak, perjalanan trekking membutuhkan waktu
-                                sekitar 4–5 jam dengan elevation gain sekitar
-                                1.100 mdpl.
+                                {t.puncakManud.aboutP3}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Pendaki dapat memilih untuk melakukan pendakian
-                                tektok (naik dan turun dalam satu hari) atau
-                                berkemah (camping) untuk menikmati suasana malam
-                                di pegunungan.
+                                {t.puncakManud.aboutP4}
                             </p>
 
                             <h3 className="mt-10 text-xl font-semibold">
-                                Aktivitas yang Bisa Dilakukan
+                                {t.puncakManud.activitiesTitle}
                             </h3>
                             <ul className="mt-4 space-y-3">
-                                {[
-                                    'Trekking menuju puncak gunung',
-                                    'Menikmati panorama alam dari ketinggian 2.110 mdpl',
-                                    'Menikmati sunrise dan sunset dari puncak',
-                                    'Camping di area pendakian',
-                                    'Pendakian tektok(naik turun dalam satu hari)',
-                                ].map((item) => (
+                                {t.puncakManud.activities.map((item) => (
                                     <li
                                         key={item}
                                         className="flex items-start gap-3"
@@ -109,16 +86,16 @@ export default function PuncakManud() {
                                 ))}
                             </ul>
 
-                            {/* Gallery placeholder */}
+                            {/* Gallery */}
                             <h3 className="mt-10 text-xl font-semibold">
-                                Galeri
+                                {t.puncakManud.galleryTitle}
                             </h3>
                             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                                 {Array.from({ length: 6 }).map((_, i) => (
                                     <img
                                         key={i}
                                         src={`/images/puncak_galeri_${i + 1}.png`}
-                                        alt={`Galeri Puncak Manud ${i + 1}`}
+                                        alt={`${t.puncakManud.galleryTitle} Puncak Manud ${i + 1}`}
                                         className="aspect-[4/3] rounded-xl object-cover"
                                     />
                                 ))}
@@ -129,17 +106,17 @@ export default function PuncakManud() {
                         <div>
                             <div className="rounded-xl border border-border bg-card p-6">
                                 <h3 className="text-lg font-semibold">
-                                    Informasi
+                                    {t.puncakManud.infoTitle}
                                 </h3>
                                 <dl className="mt-4 space-y-4">
                                     <div className="flex items-start gap-3">
                                         <Mountain className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Ketinggian
+                                                {t.puncakManud.elevation}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                2.110 mdpl
+                                                {t.puncakManud.elevationValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -147,10 +124,10 @@ export default function PuncakManud() {
                                         <Clock className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Durasi Pendakian Pos 1 ke Puncak
+                                                {t.puncakManud.hikeDuration}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                ± 4–5 jam
+                                                {t.puncakManud.hikeDurationValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -158,10 +135,10 @@ export default function PuncakManud() {
                                         <Signpost className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Elevation Gain
+                                                {t.puncakManud.elevationGain}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                ± 1.100 mdpl
+                                                {t.puncakManud.elevationGainValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -169,10 +146,10 @@ export default function PuncakManud() {
                                         <Footprints className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Akses ke Pos 1
+                                                {t.puncakManud.accessPos1}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                Tersedia ojek gunung
+                                                {t.puncakManud.accessPos1Value}
                                             </dd>
                                         </div>
                                     </div>
@@ -180,10 +157,10 @@ export default function PuncakManud() {
                                         <Info className="mt-0.5 h-5 w-5 text-emerald-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Persyaratan Tektok
+                                                {t.puncakManud.tektokReq}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                Surat sehat
+                                                {t.puncakManud.tektokReqValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -200,7 +177,7 @@ export default function PuncakManud() {
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        Kembali ke Beranda
+                        {t.puncakManud.backToHome}
                     </Link>
                 </section>
             </div>

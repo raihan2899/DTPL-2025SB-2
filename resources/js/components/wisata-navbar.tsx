@@ -2,6 +2,8 @@ import { Link, usePage } from '@inertiajs/react';
 import { Cherry, ChevronDown, Droplets, Menu, Mountain, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
+import LanguageSwitcher from '@/components/language-switcher';
+import { useLanguage } from '@/contexts/language-context';
 import { dashboard } from '@/routes';
 
 interface NavLink {
@@ -13,36 +15,37 @@ interface WisataNavbarProps {
     navLinks?: NavLink[];
 }
 
-const wisataDestinations = [
-    {
-        href: '/wisata/puncak-manud',
-        label: 'Puncak Manud',
-        description: 'Panorama gunung & sunrise',
-        icon: Mountain,
-    },
-    {
-        href: '/wisata/kebun-stroberi',
-        label: 'Kebun Stroberi',
-        description: 'Petik stroberi segar',
-        icon: Cherry,
-    },
-    {
-        href: '/wisata/air-terjun-cahaya',
-        label: 'Air Terjun Manud Jaya',
-        description: 'Air terjun 40 meter',
-        icon: Droplets,
-    },
-];
-
 export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
+    const { t } = useLanguage();
     const { auth } = usePage().props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [wisataOpen, setWisataOpen] = useState(false);
     const wisataRef = useRef<HTMLDivElement>(null);
 
+    const wisataDestinations = [
+        {
+            href: '/wisata/puncak-manud',
+            label: 'Puncak Manud',
+            description: t.navDropdown.puncakManud,
+            icon: Mountain,
+        },
+        {
+            href: '/wisata/kebun-stroberi',
+            label: 'Kebun Stroberi',
+            description: t.navDropdown.kebunStroberi,
+            icon: Cherry,
+        },
+        {
+            href: '/wisata/air-terjun-cahaya',
+            label: 'Air Terjun Manud Jaya',
+            description: t.navDropdown.airTerjun,
+            icon: Droplets,
+        },
+    ];
+
     const defaultLinks: NavLink[] = [
-        { href: '/akomodasi-transportasi', label: 'Akomodasi & Transportasi' },
-        { href: '/kontak', label: 'Kontak Kami' },
+        { href: '/akomodasi-transportasi', label: t.nav.akomodasiTransportasi },
+        { href: '/kontak', label: t.nav.kontakKami },
     ];
 
     const links = navLinks ?? defaultLinks;
@@ -82,7 +85,7 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                             className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                             onClick={() => setWisataOpen(!wisataOpen)}
                         >
-                            Wisata
+                            {t.nav.wisata}
                             <ChevronDown
                                 className={`h-4 w-4 transition-transform ${wisataOpen ? 'rotate-180' : ''}`}
                             />
@@ -131,12 +134,15 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                             </Link>
                         ),
                     )}
+
+                    <LanguageSwitcher />
+
                     {auth.user && (
                         <Link
                             href={dashboard()}
                             className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                         >
-                            Dashboard
+                            {t.nav.dashboard}
                         </Link>
                     )}
                 </div>
@@ -167,7 +173,7 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                                 className="flex w-full items-center justify-between text-sm font-medium text-muted-foreground"
                                 onClick={() => setWisataOpen(!wisataOpen)}
                             >
-                                Wisata
+                                {t.nav.wisata}
                                 <ChevronDown
                                     className={`h-4 w-4 transition-transform ${wisataOpen ? 'rotate-180' : ''}`}
                                 />
@@ -214,13 +220,16 @@ export default function WisataNavbar({ navLinks }: WisataNavbarProps) {
                                 </Link>
                             ),
                         )}
+
+                        <LanguageSwitcher />
+
                         {auth.user && (
                             <div className="flex items-center gap-3 border-t border-border pt-4">
                                 <Link
                                     href={dashboard()}
                                     className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
                                 >
-                                    Dashboard
+                                    {t.nav.dashboard}
                                 </Link>
                             </div>
                         )}

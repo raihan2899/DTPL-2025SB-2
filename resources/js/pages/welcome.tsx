@@ -2,37 +2,36 @@ import { Head, Link, usePage } from '@inertiajs/react';
 import { Bus, Cherry, Droplets, Mountain } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
 import { dashboard } from '@/routes';
 
-const destinations = [
-    {
-        name: 'Puncak Manud',
-        description:
-            'Panoramic mountain viewpoint offering breathtaking sunrise vistas over the village and surrounding valleys.',
-        image: '/images/landing_wisata_puncak.png',
-        icon: Mountain,
-        href: '/wisata/puncak-manud',
-    },
-    {
-        name: 'Kebun Stroberi Manud Jaya',
-        description:
-            'Lush strawberry fields where visitors can pick their own fresh berries amidst the cool highland air.',
-        image: '/images/landing_wisata_stroberi.png',
-        icon: Cherry,
-        href: '/wisata/kebun-stroberi',
-    },
-    {
-        name: 'Air Terjun Manud Jaya',
-        description:
-            'A stunning 40-meter waterfall hidden in the tropical forest, perfect for swimming and nature photography.',
-        image: '/images/landing_wisata_airterjun.png',
-        icon: Droplets,
-        href: '/wisata/air-terjun-cahaya',
-    },
-];
-
 export default function Welcome() {
+    const { t } = useLanguage();
     const { auth } = usePage().props;
+
+    const destinations = [
+        {
+            name: t.welcome.destPuncak,
+            description: t.welcome.destPuncakDesc,
+            image: '/images/landing_wisata_puncak.png',
+            icon: Mountain,
+            href: '/wisata/puncak-manud',
+        },
+        {
+            name: t.welcome.destStroberi,
+            description: t.welcome.destStroberiDesc,
+            image: '/images/landing_wisata_stroberi.png',
+            icon: Cherry,
+            href: '/wisata/kebun-stroberi',
+        },
+        {
+            name: t.welcome.destAirTerjun,
+            description: t.welcome.destAirTerjunDesc,
+            image: '/images/landing_wisata_airterjun.png',
+            icon: Droplets,
+            href: '/wisata/air-terjun-cahaya',
+        },
+    ];
 
     return (
         <>
@@ -61,29 +60,26 @@ export default function Welcome() {
                         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:py-40">
                             <div className="mx-auto max-w-2xl text-center">
                                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                                    Selamat Datang di{' '}
+                                    {t.welcome.heroTitle}{' '}
                                     <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                                        Desa Manud Jaya
+                                        {t.welcome.heroHighlight}
                                     </span>
                                 </h1>
                                 <p className="mt-6 text-lg leading-8 text-white/80">
-                                    Nikmati keindahan pegunungan, kesegaran
-                                    kebun stroberi, dan pesona air terjun
-                                    tersembunyi di desa wisata alam yang masih
-                                    asri di jantung Indonesia.
+                                    {t.welcome.heroDesc}
                                 </p>
                                 <div className="mt-10 flex items-center justify-center gap-4">
                                     <a
                                         href="#destinations"
                                         className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                                     >
-                                        Jelajahi Wisata
+                                        {t.welcome.exploreBtn}
                                     </a>
                                     <Link
                                         href="/akomodasi-transportasi"
                                         className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-white/90"
                                     >
-                                        Akomodasi & Transportasi
+                                        {t.welcome.accommodationBtn}
                                     </Link>
                                 </div>
                             </div>
@@ -97,11 +93,10 @@ export default function Welcome() {
                     >
                         <div className="mx-auto max-w-2xl text-center">
                             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                                Destinasi Wisata
+                                {t.welcome.destinationsTitle}
                             </h2>
                             <p className="mt-4 text-lg text-muted-foreground">
-                                Tempat-tempat pilihan yang menawarkan pengalaman
-                                luar biasa bagi setiap pengunjung.
+                                {t.welcome.destinationsDesc}
                             </p>
                         </div>
                         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -139,22 +134,17 @@ export default function Welcome() {
                             <div className="grid items-center gap-12 lg:grid-cols-2">
                                 <div>
                                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                                        Akomodasi & Transportasi
+                                        {t.welcome.accommodationTitle}
                                     </h2>
                                     <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                                        Temukan berbagai pilihan penginapan
-                                        nyaman mulai dari homestay warga hingga
-                                        villa keluarga. Desa Manud Jaya mudah
-                                        dijangkau melalui bus umum, kereta api,
-                                        maupun kendaraan pribadi dari kota
-                                        terdekat.
+                                        {t.welcome.accommodationDesc}
                                     </p>
                                     <Link
                                         href="/akomodasi-transportasi"
                                         className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
                                     >
                                         <Bus className="h-4 w-4" />
-                                        Selengkapnya
+                                        {t.welcome.moreBtn}
                                     </Link>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
@@ -183,12 +173,10 @@ export default function Welcome() {
                             />
                             <div className="absolute inset-0 bg-black/50" />
                             <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                                Siap Menjelajahi Desa Manud Jaya?
+                                {t.welcome.ctaTitle}
                             </h2>
                             <p className="relative mx-auto mt-4 max-w-xl text-lg text-white/80">
-                                Bergabunglah dengan ribuan wisatawan yang telah
-                                menemukan keindahan alam tersembunyi di desa
-                                kami. Petualangan Anda dimulai di sini.
+                                {t.welcome.ctaDesc}
                             </p>
                             <div className="relative mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                                 {auth.user && (
@@ -196,14 +184,14 @@ export default function Welcome() {
                                         href={dashboard()}
                                         className="rounded-lg bg-white px-8 py-3 text-sm font-semibold text-blue-600 shadow-sm transition-colors hover:bg-white/90"
                                     >
-                                        Ke Dashboard
+                                        {t.welcome.toDashboard}
                                     </Link>
                                 )}
                                 <a
                                     href="#destinations"
                                     className="rounded-lg border border-white/30 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
                                 >
-                                    Lihat Wisata
+                                    {t.welcome.viewTourism}
                                 </a>
                             </div>
                         </div>
@@ -223,24 +211,23 @@ export default function Welcome() {
                                     href="#destinations"
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                 >
-                                    Wisata
+                                    {t.welcome.footerWisata}
                                 </a>
                                 <Link
                                     href="/akomodasi-transportasi"
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                 >
-                                    Akomodasi & Transportasi
+                                    {t.welcome.footerAkomodasi}
                                 </Link>
                                 <Link
                                     href="/kontak"
                                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                                 >
-                                    Kontak Kami
+                                    {t.welcome.footerKontak}
                                 </Link>
                             </div>
                             <p className="text-sm text-muted-foreground">
-                                &copy; 2026 Desa Manud Jaya. Hak cipta
-                                dilindungi.
+                                {t.welcome.copyright}
                             </p>
                         </div>
                     </div>

@@ -11,8 +11,11 @@ import {
 } from 'lucide-react';
 
 import WisataNavbar from '@/components/wisata-navbar';
+import { useLanguage } from '@/contexts/language-context';
 
 export default function KebunStroberi() {
+    const { t } = useLanguage();
+
     return (
         <>
             <Head title="Kebun Stroberi Manud Jaya — Desa Manud Jaya">
@@ -37,12 +40,10 @@ export default function KebunStroberi() {
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="mx-auto max-w-2xl px-6 text-center">
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                                Kebun Stroberi Manud Jaya
+                                {t.kebunStroberi.title}
                             </h1>
                             <p className="mt-4 text-lg text-white/80">
-                                Lush strawberry fields where visitors can pick
-                                their own fresh berries amidst the cool highland
-                                air.
+                                {t.kebunStroberi.heroDesc}
                             </p>
                         </div>
                     </div>
@@ -54,55 +55,36 @@ export default function KebunStroberi() {
                         {/* Main content */}
                         <div className="lg:col-span-2">
                             <h2 className="text-2xl font-bold">
-                                Tentang Kebun Stroberi
+                                {t.kebunStroberi.aboutTitle}
                             </h2>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Kebun Strawberry Manud Jaya merupakan destinasi
-                                wisata keluarga yang menawarkan pengalaman
-                                memetik strawberry langsung dari kebunnya.
-                                Terletak di kawasan pegunungan dengan udara yang
-                                sejuk, kebun ini menjadi tempat yang
-                                menyenangkan bagi pengunjung untuk menikmati
-                                suasana alam sekaligus merasakan pengalaman
-                                memetik buah segar secara langsung.
+                                {t.kebunStroberi.aboutP1}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Destinasi ini juga dirancang sebagai wisata
-                                ramah anak (kids-friendly). Anak-anak dapat
-                                mengikuti aktivitas edukatif seperti memberi
-                                makan kelinci dan domba yang berada di area
-                                peternakan mini. Kegiatan ini wmemberikan
-                                pengalaman belajar yang menyenangkan bagi
-                                anak-anak mengenai hewan dan lingkungan.
+                                {t.kebunStroberi.aboutP2}
                             </p>
                             <p className="mt-4 leading-relaxed text-muted-foreground">
-                                Destinasi ini juga dirancang sebagai wisata
-                                ramah anak (kids-friendly). Anak-anak dapat
-                                mengikuti aktivitas edukatif seperti memberi
-                                makan kelinci dan domba yang berada di area
-                                peternakan mini. Kegiatan ini wmemberikan
-                                pengalaman belajar yang menyenangkan bagi
-                                anak-anak mengenai hewan dan lingkungan.
+                                {t.kebunStroberi.aboutP2}
                             </p>
                             <h3 className="mt-10 text-xl font-semibold">
-                                Aktivitas yang Bisa Dilakukan
+                                {t.kebunStroberi.activitiesTitle}
                             </h3>
                             <div className="mt-4 grid gap-4 sm:grid-cols-3">
                                 {[
                                     {
                                         icon: Cherry,
-                                        title: 'Mmetik stroberi langsung dari kebun',
-                                        desc: 'Petik langsung stroberi segar dari kebun dan bawa pulang sebagai oleh-oleh.',
+                                        title: t.kebunStroberi.activity1Title,
+                                        desc: t.kebunStroberi.activity1Desc,
                                     },
                                     {
                                         icon: Leaf,
-                                        title: 'Memberi Makan Hewan',
-                                        desc: 'Beri makan kelinci dan domba di peternakan mini yang ada di area wisata.',
+                                        title: t.kebunStroberi.activity2Title,
+                                        desc: t.kebunStroberi.activity2Desc,
                                     },
                                     {
                                         icon: Camera,
-                                        title: 'Berfoto di area kebun strawberry',
-                                        desc: 'Abadikan momen seru memetik stroberi dengan latar kebun yang indah.',
+                                        title: t.kebunStroberi.activity3Title,
+                                        desc: t.kebunStroberi.activity3Desc,
                                     },
                                 ].map((activity) => (
                                     <div
@@ -124,13 +106,13 @@ export default function KebunStroberi() {
                                 {[
                                     {
                                         icon: UtensilsCrossed,
-                                        title: 'Menikmati olahan strawberry segar ',
-                                        desc: 'Cicipi berbagai olahan stroberi organik khas Desa Manud Jaya.',
+                                        title: t.kebunStroberi.activity4Title,
+                                        desc: t.kebunStroberi.activity4Desc,
                                     },
                                     {
                                         icon: Info,
-                                        title: 'Wisata edukasi pertanian untuk anak-anak ',
-                                        desc: 'Anak-anak dapat belajar tentang pertanian dan cara menanam stroberi melalui aktivitas edukatif yang menyenangkan.',
+                                        title: t.kebunStroberi.activity5Title,
+                                        desc: t.kebunStroberi.activity5Desc,
                                     },
                                 ].map((activity) => (
                                     <div
@@ -148,16 +130,16 @@ export default function KebunStroberi() {
                                 ))}
                             </div>
 
-                            {/* Gallery placeholder */}
+                            {/* Gallery */}
                             <h3 className="mt-10 text-xl font-semibold">
-                                Galeri
+                                {t.kebunStroberi.galleryTitle}
                             </h3>
                             <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
                                 {Array.from({ length: 6 }).map((_, i) => (
                                     <img
                                         key={i}
                                         src={`/images/stroberi_galeri_${i + 1}.png`}
-                                        alt={`Galeri Kebun Stroberi ${i + 1}`}
+                                        alt={`${t.kebunStroberi.galleryTitle} Kebun Stroberi ${i + 1}`}
                                         className="aspect-[4/3] rounded-xl object-cover"
                                     />
                                 ))}
@@ -168,18 +150,17 @@ export default function KebunStroberi() {
                         <div>
                             <div className="rounded-xl border border-border bg-card p-6">
                                 <h3 className="text-lg font-semibold">
-                                    Informasi
+                                    {t.kebunStroberi.infoTitle}
                                 </h3>
                                 <dl className="mt-4 space-y-4">
                                     <div className="flex items-start gap-3">
                                         <Cherry className="mt-0.5 h-5 w-5 text-pink-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Musim Panen
+                                                {t.kebunStroberi.harvestSeason}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                Sepanjang tahun (puncak: Juni —
-                                                Agustus)
+                                                {t.kebunStroberi.harvestSeasonValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -187,35 +168,13 @@ export default function KebunStroberi() {
                                         <HandCoins className="mt-0.5 h-5 w-5 text-pink-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Harga Tiket
+                                                {t.kebunStroberi.ticketPrice}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
                                                 <ul className="mt-1 text-xs text-muted-foreground">
-                                                    <li>
-                                                        {' '}
-                                                        Tiket masuk kebun :
-                                                        Rp15.000 / orang{' '}
-                                                    </li>
-                                                    <li>
-                                                        {' '}
-                                                        Paket petik strawberry :
-                                                        Rp50.000 / 500 gram{' '}
-                                                    </li>
-                                                    <li>
-                                                        {' '}
-                                                        Pakan kelinci & domba :
-                                                        Rp10.000 / paket{' '}
-                                                    </li>
-                                                    <li>
-                                                        {' '}
-                                                        Parkir motor :
-                                                        Rp5.000{' '}
-                                                    </li>
-                                                    <li>
-                                                        {' '}
-                                                        Parkir mobil :
-                                                        Rp10.000{' '}
-                                                    </li>
+                                                    {t.kebunStroberi.ticketPrices.map((price) => (
+                                                        <li key={price}>{price}</li>
+                                                    ))}
                                                 </ul>
                                             </dd>
                                         </div>
@@ -224,10 +183,10 @@ export default function KebunStroberi() {
                                         <Clock className="mt-0.5 h-5 w-5 text-pink-500" />
                                         <div>
                                             <dt className="text-sm font-medium">
-                                                Jam Buka
+                                                {t.kebunStroberi.openHours}
                                             </dt>
                                             <dd className="text-sm text-muted-foreground">
-                                                08:00 — 17:00 WIB (setiap hari)
+                                                {t.kebunStroberi.openHoursValue}
                                             </dd>
                                         </div>
                                     </div>
@@ -244,7 +203,7 @@ export default function KebunStroberi() {
                         className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        Kembali ke Beranda
+                        {t.kebunStroberi.backToHome}
                     </Link>
                 </section>
             </div>
