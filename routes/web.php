@@ -14,6 +14,18 @@ Route::get('/wisata/puncak-manud', fn () => Inertia::render('wisata/puncak-manud
 Route::get('/wisata/kebun-stroberi', fn () => Inertia::render('wisata/kebun-stroberi'))->name('wisata.kebun-stroberi');
 Route::get('/wisata/air-terjun-cahaya', fn () => Inertia::render('wisata/air-terjun-cahaya'))->name('wisata.air-terjun-cahaya');
 
+Route::get('/akomodasi-transportasi', function () {
+    return Inertia::render('akomodasi-transportasi', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('akomodasi-transportasi');
+
+Route::get('/kontak', function () {
+    return Inertia::render('kontak', [
+        'canRegister' => Features::enabled(Features::registration()),
+    ]);
+})->name('kontak');
+
 Route::get('dashboard', function () {
     return Inertia::render('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
